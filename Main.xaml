@@ -58,6 +58,6 @@
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="hola soy sergio" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="hola soy Bidane" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="hola soy Lander" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="hola cecilio" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="229.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="hola cecilio 2" />
   </Sequence>
 </Activity>
