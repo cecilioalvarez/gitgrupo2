@@ -189,7 +189,7 @@
     </ui:ForEach>
     <ui:OutputDataTable DataTable="[tablatotal]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="564,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textototal]" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="564,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[textototal]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="564,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\bidas\OneDrive\Desktop\ResumenGestamp.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="564,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Gorka\Desktop\resumen.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
