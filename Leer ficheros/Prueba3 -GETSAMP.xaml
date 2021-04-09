@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PRUeba2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="698,4970" sap2010:WorkflowViewState.IdRef="PRUeba2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PRUeba2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="698,6289" sap2010:WorkflowViewState.IdRef="PRUeba2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -419,17 +419,17 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteCell Cell="B1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet1" Text="Piezas totales" />
-            <ui:ExcelWriteCell Cell="C1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Sheet1" Text="Piezas correctas" />
-            <ui:ExcelWriteCell Cell="D1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Sheet1" Text="% correctas" />
-            <ui:ExcelWriteCell Cell="A2" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Sheet1" Text="Valores totales" />
-            <ui:ExcelWriteCell Cell="A3" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Sheet1" Text="Excel1" />
-            <ui:ExcelWriteCell Cell="A4" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Sheet1" Text="Excel2" />
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="B1" />
-            <ui:ExcelWriteCell Cell="A6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Sheet1" Text="Suma" />
-            <ui:ExcelWriteCell Cell="B6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Sheet1" Text="=B3+B4" />
-            <ui:ExcelWriteCell Cell="C6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Sheet1" Text="=C3+C4" />
-            <ui:ExcelWriteCell Cell="D6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Sheet1" Text="=C6/B6*100" />
+            <ui:ExcelWriteCell Cell="B1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Hoja1" Text="Piezas totales" />
+            <ui:ExcelWriteCell Cell="C1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Hoja1" Text="Piezas correctas" />
+            <ui:ExcelWriteCell Cell="D1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Hoja1" Text="% correctas" />
+            <ui:ExcelWriteCell Cell="A2" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Hoja1" Text="Valores totales" />
+            <ui:ExcelWriteCell Cell="A3" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Hoja1" Text="Excel1" />
+            <ui:ExcelWriteCell Cell="A4" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Hoja1" Text="Excel2" />
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Hoja1" StartingCell="B1" />
+            <ui:ExcelWriteCell Cell="A6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Hoja1" Text="Suma" />
+            <ui:ExcelWriteCell Cell="B6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Hoja1" Text="=B3+B4" />
+            <ui:ExcelWriteCell Cell="C6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Hoja1" Text="=C3+C4" />
+            <ui:ExcelWriteCell Cell="D6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Hoja1" Text="=C6/B6*100" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
