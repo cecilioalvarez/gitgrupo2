@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PRUeba2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1005,6917" sap2010:WorkflowViewState.IdRef="PRUeba2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PRUeba2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1005,5659" sap2010:WorkflowViewState.IdRef="PRUeba2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -68,7 +68,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PRUeba2" sap:VirtualizedContainerService.HintSize="708,6852" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PRUeba2" sap:VirtualizedContainerService.HintSize="708,5594" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tablatotal" />
       <Variable x:TypeArguments="x:String" Name="textototal" />
@@ -275,136 +275,30 @@
         <OutArgument x:TypeArguments="x:String">[nombrearchivoresu]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="666,3666" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Gorka\Desktop\resumen Gstamp.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="666,2408" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Gorka\Desktop\resumen Gstamp.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="572,3557" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="418,2299" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteCell Cell="B1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Hoja1" Text="Piezas totales" />
-            <ui:ExcelWriteCell Cell="C1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Hoja1" Text="Piezas correctas" />
-            <ui:ExcelWriteCell Cell="D1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Hoja1" Text="% correctas" />
-            <ui:ExcelWriteCell Cell="A2" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Hoja1" Text="Valores totales" />
-            <ui:ExcelWriteCell Cell="A3" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Hoja1" Text="Excel1" />
-            <ui:ExcelWriteCell Cell="A4" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Hoja1" Text="Excel2" />
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Hoja1" StartingCell="B1" />
-            <ui:ExcelWriteCell Cell="A6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Hoja1" Text="Suma" />
-            <ui:ExcelWriteCell Cell="B6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Hoja1" Text="=B3+B4" />
-            <ui:ExcelWriteCell Cell="C6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Hoja1" Text="=C3+C4" />
-            <ui:ExcelWriteCell Cell="D6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="530,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Hoja1" Text="=C6/B6*100" />
-            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="530,1218" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="494,1140" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Abrir aplicación 'excel.exe resumen'" FileName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" sap:VirtualizedContainerService.HintSize="452,1048" sap2010:WorkflowViewState.IdRef="OpenApplication_8" InformativeScreenshot="36ae912295684de0aa63b11b5535ed35" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='resumen Gstamp - Excel' /&gt;">
-                    <ui:OpenApplication.Body>
-                      <ActivityAction x:TypeArguments="x:Object">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,902" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Básico" sap:VirtualizedContainerService.HintSize="376,810" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'Botón  Pestaña Archivo'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition OffsetX="43" OffsetY="19" Position="TopLeft" />
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba48851c-74a2-4087-8101-25538ee76198" InformativeScreenshot="a633822b6371f204dea2f39a60f9d87d" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='resumen Gstamp - Excel' /&gt;&lt;uia cls='MsoCommandBar' helpText='Barra de herramientas Ribbon' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='Pestaña Archivo' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'Elemento de'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition OffsetX="69" OffsetY="17" Position="TopLeft" />
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90f59ad9-3b3f-4f96-b5cd-6f6cf0603c0c" InformativeScreenshot="7acd73fce71af5b71d0a0b8485caaf9c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='resumen Gstamp - Excel' /&gt;&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='Archivo' /&gt;&lt;uia cls='NetUIRibbonTab' name='Guardar como' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'Botón  Examinar'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_38" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition OffsetX="70" OffsetY="30" Position="TopLeft" />
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="afa3bc29-a76e-4419-a497-835ce131004b" InformativeScreenshot="b4bf1959e0c8415106a2ab8b430c3a34" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='resumen Gstamp - Excel' /&gt;&lt;uia cls='NetUIElement' name='Guardar como' /&gt;&lt;uia cls='NetUISlabContainer' name='Características de guardado' /&gt;&lt;uia cls='NetUIElement' /&gt;&lt;uia cls='NetUISimpleButton' name='Examinar' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Escribir en 'Edit'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="False" Text="wawawawawaw">
-                              <ui:TypeInto.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="237ef55b-3f81-4926-aa82-4a1935628b76" InformativeScreenshot="25bd1a0bfbb62ba9d5936e6eb643a8c3" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Guardar como' /&gt;&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:TypeInto.Target>
-                            </ui:TypeInto>
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'Button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_39" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition OffsetX="51" OffsetY="19" Position="TopLeft" />
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2c3b9ee-8aea-4ad2-9692-e90a093aed2c" InformativeScreenshot="cae475fdaf56962840e6713a3f382ba0" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Guardar como' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Guardar' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                          </Sequence>
-                        </Sequence>
-                      </ActivityAction>
-                    </ui:OpenApplication.Body>
-                  </ui:OpenApplication>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-            <Sequence DisplayName="Básico" sap:VirtualizedContainerService.HintSize="530,810" sap2010:WorkflowViewState.IdRef="Sequence_32">
+            <ui:ExcelWriteCell Cell="B1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Hoja1" Text="Piezas totales" />
+            <ui:ExcelWriteCell Cell="C1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Hoja1" Text="Piezas correctas" />
+            <ui:ExcelWriteCell Cell="D1" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Hoja1" Text="% correctas" />
+            <ui:ExcelWriteCell Cell="A2" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Hoja1" Text="Valores totales" />
+            <ui:ExcelWriteCell Cell="A3" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Hoja1" Text="Excel1" />
+            <ui:ExcelWriteCell Cell="A4" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Hoja1" Text="Excel2" />
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Hoja1" StartingCell="B1" />
+            <ui:ExcelWriteCell Cell="A6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Hoja1" Text="Suma" />
+            <ui:ExcelWriteCell Cell="B6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Hoja1" Text="=B3+B4" />
+            <ui:ExcelWriteCell Cell="C6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Hoja1" Text="=C3+C4" />
+            <ui:ExcelWriteCell Cell="D6" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="Hoja1" Text="=C6/B6*100" />
+            <Sequence DisplayName="Básico" sap:VirtualizedContainerService.HintSize="376,810" sap2010:WorkflowViewState.IdRef="Sequence_32">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
