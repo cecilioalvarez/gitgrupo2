@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="NombreArchivoRELOJ" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="730,519" sap2010:WorkflowViewState.IdRef="NombreArchivoRELOJ_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="NombreArchivoRELOJ" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="631,615" sap2010:WorkflowViewState.IdRef="NombreArchivoRELOJ_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -66,12 +66,14 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="NombreArchivoRELOJ" sap:VirtualizedContainerService.HintSize="426,454" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="NombreArchivoRELOJ" sap:VirtualizedContainerService.HintSize="426,550" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="nombreFecha" />
       <Variable x:TypeArguments="x:String" Name="FechaHora" />
+      <Variable x:TypeArguments="x:String" Name="URLNombreNuevo" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -86,7 +88,15 @@
         <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString("dd_MM_yyyy_HH_mm")]</InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="384,62" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[FechaHora]" />
-    <ui:MoveFile ContinueOnError="{x:Null}" Destination="{x:Null}" Path="{x:Null}" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="384,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[FechaHora]" />
+    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[URLNombreNuevo]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["C:\Users\bidas\OneDrive\Desktop\Prueba Nombre archivo Fecha Hora\" &amp; FechaHora &amp; ".xlsx"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[URLNombreNuevo]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="C:\Users\bidas\OneDrive\Desktop\Prueba Nombre archivo Fecha Hora\ficheroexcelgestampPRUEBA.xlsx" />
   </Sequence>
 </Activity>
