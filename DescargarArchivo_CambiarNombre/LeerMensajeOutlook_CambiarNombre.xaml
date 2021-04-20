@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="638,1856" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="638,2240" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LeerMensajeOutlook" sap:VirtualizedContainerService.HintSize="604,1791" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LeerMensajeOutlook" sap:VirtualizedContainerService.HintSize="604,2175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="ListaMensaje" />
       <Variable x:TypeArguments="x:String" Name="Email" />
@@ -84,21 +84,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="galaronmario32@hotmail.com" DisplayName="Obtener mensajes de correo de Outlook" GetAttachements="False" sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Bandeja de entrada" MarkAsRead="True" Messages="[ListaMensaje]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="10" />
-    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="galaronmario32@hotmail.com" sap2010:Annotation.AnnotationText="Accede a la sesion Outlook introducida en Propiedades" DisplayName="Obtener mensajes de correo de Outlook" GetAttachements="False" sap:VirtualizedContainerService.HintSize="562,64" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Bandeja de entrada" MarkAsRead="True" Messages="[ListaMensaje]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetOutlookMailMessages>
+    <Assign sap2010:Annotation.AnnotationText="Guardar en una variable el email del usuario que quieres filtrar los mensajes" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,102" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Email]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">lopezzmario32@gmail.com</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Sacar fecha y hora " DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[FechaHora]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -106,42 +104,44 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="562,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[FechaHora]" />
-    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[URLNombreNuevo]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook\" &amp; FechaHora &amp; ".xlsx"]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="562,582" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaMensaje]">
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Recorre la bandeja de mensajes del Outlook" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="562,644" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaMensaje]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="526,448" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="526,479" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[item.From.Address = Email]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,356" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[item.From.Address = Email]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,387" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,210" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Guardar archivos adjuntos" FolderPath="C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False" />
+                  <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="Guarda el archivo en la ruta seleccionada" DisplayName="Guardar archivos adjuntos" FolderPath="C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:SaveMailAttachments>
                 </Sequence>
               </If.Then>
             </If>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
     <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
@@ -159,22 +159,67 @@
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(RutaCarpeta)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="562,383" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Ficheros]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Recorre la ruta seleccionada" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="562,953" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="426,788" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[URLNombreNuevo]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="False" Path="[item.ToString]" />
+            <Assign sap2010:Annotation.AnnotationText="Sacar fecha y hora " DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="384,91" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[FechaHora]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss")]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="384,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[FechaHora]" />
+            <Assign sap2010:Annotation.AnnotationText="guardar el nombre con la FECHA HORA en una varible" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="384,102" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[URLNombreNuevo]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook\" &amp; FechaHora &amp; ".xlsx"]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <ui:MoveFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Cambia el nombre" Destination="[URLNombreNuevo]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="384,188" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="False" Path="[item.ToString]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MoveFile>
+            <Delay sap2010:Annotation.AnnotationText="espera 2 segundos para que no se guarden mas de un archivo en 1 segundo (para evitar fallos)" DisplayName="Retraso" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="384,94" sap2010:WorkflowViewState.IdRef="Delay_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
   </Sequence>
 </Activity>
