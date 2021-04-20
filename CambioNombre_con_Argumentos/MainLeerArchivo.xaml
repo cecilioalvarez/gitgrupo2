@@ -1,4 +1,5 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="631,1399" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1029,1399" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
@@ -124,7 +125,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="Guarda el archivo en la ruta seleccionada" DisplayName="Guardar archivos adjuntos" FolderPath="C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False">
+                  <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="Guarda el archivo en la ruta seleccionada" DisplayName="Guardar archivos adjuntos" FolderPath="C:\Users\Adrian\Desktop\Mario\Proyecto\PruebaOutlook" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -148,7 +149,7 @@
         <OutArgument x:TypeArguments="x:String">[RutaCarpeta]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">C:\Users\media\Documents\CursoRPA_Gestamp\proyecto\PruebaOutlook</InArgument>
+        <InArgument x:TypeArguments="x:String">["C:\Users\Adrian\Desktop\Mario\Proyecto\PruebaOutlook"]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_5">
@@ -159,14 +160,10 @@
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(RutaCarpeta)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Filtrar.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CambioNombre_con_Argumentos\Filtrar.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Ficheros" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="URLcarpeta">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="RutaCarpeta" />
-        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[Ficheros]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URLcarpeta">[RutaCarpeta]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
