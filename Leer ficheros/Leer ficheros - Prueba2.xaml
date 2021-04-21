@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1113,3982</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1114,4455</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Ubicacion_ficheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -79,7 +79,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="606,3917" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="632,4390" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="x:String" Name="codigo" />
@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="564,102" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="590,102" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[ficheros]</OutArgument>
       </Assign.To>
@@ -103,25 +103,25 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="564,3683" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="590,4156" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="528,3518" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="554,3991" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="486,3426" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="512,3899" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="452,3317" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="478,3790" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="texto" />
                       <Variable x:TypeArguments="x:String" Name="textotabla1" />
@@ -137,38 +137,52 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="Leer celdas del Excel de Gestamp" DataTable="[tabla]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="B28:AE28" SheetName="Sheet1">
+                    <ui:ExcelReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="Leer celdas del Excel de Gestamp" DataTable="[tabla]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="436,90" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="B28:AE28" SheetName="Sheet1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ExcelReadRange>
-                    <ui:OutputDataTable DataTable="[tabla]" DisplayName="Private: Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="410,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textotabla1]" />
-                    <WriteLine sap2010:Annotation.AnnotationText="Para comprobar que lee las celdas del Excel de Gestamp. Hasta aqui todo OKEY" DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,118" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[textotabla]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </WriteLine>
-                    <ui:ExcelReadCell Cell="D4" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Sheet1">
+                    <ui:OutputDataTable DataTable="[tabla]" DisplayName="Private: Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textotabla1]" />
+                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[textotabla1]" />
+                    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,288" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="272,210" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <WriteLine sap2010:Annotation.AnnotationText="Para comprobar que lee las celdas del Excel de Gestamp. Hasta aqui todo OKEY" DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,118" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[textotabla]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </WriteLine>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <ui:ExcelReadCell Cell="D4" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Sheet1">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:String">[codigo]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <ui:ExcelReadCell Cell="A31" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Sheet1">
+                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;codigo&quot; &amp;codigo]" />
+                    <ui:ExcelReadCell Cell="A31" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Sheet1">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:String">[fechaini]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <ui:ExcelReadCell Cell="B28" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="Sheet1">
+                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;fechaini&quot; &amp;fechaini]" />
+                    <ui:ExcelReadCell Cell="B28" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="Sheet1">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:Double">[tipo]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[codigo]" />
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[tabla]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="410,2477" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;tipo&quot; &amp;tipo]" />
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[tabla]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="436,2477" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
