@@ -97,7 +97,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A26" />
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A26" />
             <ui:OutputDataTable DataTable="[tablatotal]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textotabla]" />
             <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="376,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[textotabla]" />
             <ui:ExcelWriteCell Cell="A26" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Sheet1" Text="[codigo]" />
