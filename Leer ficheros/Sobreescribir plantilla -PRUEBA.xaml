@@ -3,11 +3,12 @@
     <x:Property Name="codigo" Type="InArgument(x:String)" />
     <x:Property Name="fechaini" Type="InArgument(x:String)" />
     <x:Property Name="tablatotal" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="Fechafin" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1114,2136</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>961,2263</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sobreescribir_plantilla_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -68,7 +69,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sobreescribir_plantilla" sap:VirtualizedContainerService.HintSize="494,2071" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sobreescribir_plantilla" sap:VirtualizedContainerService.HintSize="494,2198" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="nombrearchivoresu" />
     </Sequence.Variables>
@@ -82,13 +83,13 @@
         <OutArgument x:TypeArguments="x:String">[nombrearchivoresu]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="452,1701" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Gorka\Desktop\PlantillaSalida.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="452,1828" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Gorka\Desktop\PlantillaSalida.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="418,1592" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="418,1719" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="textotabla" />
             </Sequence.Variables>
@@ -102,6 +103,7 @@
             <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="376,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[textotabla]" />
             <ui:ExcelWriteCell Cell="A26" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="Sheet1" Text="[codigo]" />
             <ui:ExcelWriteCell Cell="B26" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="Sheet1" Text="[fechaini]" />
+            <ui:ExcelWriteCell Cell="C26" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="Sheet1" Text="[Fechafin]" />
             <Sequence DisplayName="Básico" sap:VirtualizedContainerService.HintSize="376,956" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
