@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>961,6756</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>961,6926</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Ubicacion_ficheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -79,7 +79,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="798,6691" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="798,6861" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="x:String" Name="codigo" />
@@ -107,31 +107,31 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="756,6356" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="756,6526" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="720,6190" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="720,6360" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="678,6098" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="678,6268" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="644,5989" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="644,6159" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="602,1933" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="602,2103" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="Tabla_Fechas" />
                         <Variable x:TypeArguments="x:String" Name="Texto_tablaFechas" />
@@ -221,7 +221,18 @@
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[Texto_tablaFechas]" />
+                      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="560,232" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="272,154" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,62" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[Texto_tablaFechas]" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
                       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="560,62" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[Tabla_Fechas.Rows.Count.ToString]" />
                       <ui:FilterDataTable DataTable="[Tabla_Fechas]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="560,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[nueva]" SelectColumnsMode="Keep">
                         <ui:FilterDataTable.Filters>
