@@ -123,7 +123,7 @@
                 <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
               </ui:GetFromClipboard.Result>
             </ui:GetFromClipboard>
-            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[datos]" />
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[datos.Trim()]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
