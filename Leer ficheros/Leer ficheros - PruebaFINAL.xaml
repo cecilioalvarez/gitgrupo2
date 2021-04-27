@@ -5,11 +5,13 @@
     <x:Property Name="tablatotal" Type="InArgument(sd:DataTable)" />
     <x:Property Name="carpeta" Type="InArgument(x:String)" />
     <x:Property Name="codigo" Type="OutArgument(x:String)" />
+    <x:Property Name="tabla2" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="filaNueva2" Type="InArgument(sd:DataRow)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1203,9650</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1101,17829</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Ubicacion_ficheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -80,7 +82,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="1213,9585" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="1111,17764" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="x:String" Name="codigo" />
@@ -127,34 +129,34 @@
       <Variable x:TypeArguments="x:Int32" Name="Suma" />
       <Variable x:TypeArguments="x:Int32" Name="Sumapiezastotales" />
       <Variable x:TypeArguments="x:Int32" Name="SumapiezasOK" />
-      <Variable x:TypeArguments="x:String" Name="SumaA" />
-      <Variable x:TypeArguments="x:String" Name="SumaB" />
-      <Variable x:TypeArguments="x:String" Name="SumaC" />
-      <Variable x:TypeArguments="x:String" Name="SumaD" />
-      <Variable x:TypeArguments="x:String" Name="SumaE" />
-      <Variable x:TypeArguments="x:String" Name="SumaF" />
-      <Variable x:TypeArguments="x:String" Name="SumaG" />
-      <Variable x:TypeArguments="x:String" Name="SumaH" />
-      <Variable x:TypeArguments="x:String" Name="SumaI" />
-      <Variable x:TypeArguments="x:String" Name="SumaJ" />
-      <Variable x:TypeArguments="x:String" Name="SumaK" />
-      <Variable x:TypeArguments="x:String" Name="SumaL" />
-      <Variable x:TypeArguments="x:String" Name="SumaM" />
-      <Variable x:TypeArguments="x:String" Name="SumaN" />
-      <Variable x:TypeArguments="x:String" Name="SumaO" />
-      <Variable x:TypeArguments="x:String" Name="SumaP" />
-      <Variable x:TypeArguments="x:String" Name="SumaQ" />
-      <Variable x:TypeArguments="x:String" Name="SumaR" />
-      <Variable x:TypeArguments="x:String" Name="SumaS" />
-      <Variable x:TypeArguments="x:String" Name="SumaT" />
-      <Variable x:TypeArguments="x:String" Name="Sumanachgear" />
-      <Variable x:TypeArguments="x:String" Name="SumaBio" />
-      <Variable x:TypeArguments="x:String" Name="Sumaio" />
-      <Variable x:TypeArguments="x:String" Name="SumaNio" />
-      <Variable x:TypeArguments="x:String" Name="Sumageleise" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaA" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaB" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaC" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaD" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaE" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaF" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaG" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaH" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaI" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaJ" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaK" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaL" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaM" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaN" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaO" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaP" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaQ" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaR" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaS" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaT" />
+      <Variable x:TypeArguments="x:Int32" Name="Sumanachgear" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaBio" />
+      <Variable x:TypeArguments="x:Int32" Name="Sumaio" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaNio" />
+      <Variable x:TypeArguments="x:Int32" Name="Sumageleise" />
       <Variable x:TypeArguments="x:String" Name="fecha">
         <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="fechaini" />
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&amp;fechaini" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="textoTabla_leida" />
@@ -190,14 +192,15 @@
       <Variable x:TypeArguments="x:String" Name="nachgear1" />
       <Variable x:TypeArguments="x:String" Name="S1" />
       <Variable x:TypeArguments="x:String" Name="io1" />
+      <Variable x:TypeArguments="x:Int32" Name="SumaContainers" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[Fechas_tab]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="1171,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Fecha&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Fecha&gt;text&lt;/Fecha&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1171,104" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:BuildDataTable DataTable="[Fechas_tab]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="1069,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Fecha&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Fecha&gt;text&lt;/Fecha&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1069,104" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[ficheros]</OutArgument>
       </Assign.To>
@@ -210,31 +213,31 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="1171,9250" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="1069,17429" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="1135,9084" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="1033,17263" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="1093,8992" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="991,17171" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1059,8883" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="957,17062" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1017,3592" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,3592" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -487,7 +490,7 @@
                                         <OutArgument x:TypeArguments="x:Int32">[io]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(fila(25))]</InArgument>
+                                        <InArgument x:TypeArguments="x:Int32">[Convert.Toint32(fila(25))]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_138">
@@ -495,7 +498,7 @@
                                         <OutArgument x:TypeArguments="x:Int32">[nio]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(fila(26))]</InArgument>
+                                        <InArgument x:TypeArguments="x:Int32">[Convert.Toint32(fila(26))]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_139">
@@ -810,7 +813,7 @@
                         </ui:ForEachRow.Body>
                       </ui:ForEachRow>
                     </Sequence>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1017,718" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,718" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Name="Tabla_Fechas" />
                         <Variable x:TypeArguments="x:String" Name="Texto_tablaFechas" />
@@ -885,18 +888,18 @@
                       <ui:OutputDataTable DataTable="[nueva]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[textoNueva]" />
                       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[textoNueva]" />
                     </Sequence>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="1017,4401" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,12580" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelReadCell Cell="A31" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="975,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="Sheet1">
+                      <ui:ExcelReadCell Cell="A31" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="873,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="Sheet1">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="x:String">[fechaini]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <ui:ExcelReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="Leer toda la hoja del Excel de Gestamp: creando variable de tipo tabla de datos" DataTable="[Tabla_leida]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="975,103" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="Sheet1">
+                      <ui:ExcelReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="Leer toda la hoja del Excel de Gestamp: creando variable de tipo tabla de datos" DataTable="[Tabla_leida]" DisplayName="Leer rango" sap:VirtualizedContainerService.HintSize="873,103" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="Sheet1">
                         <ui:ExcelReadRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -908,8 +911,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelReadRange>
-                      <ui:OutputDataTable DataTable="[Tabla_leida]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="975,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[textoTabla_leida]" />
-                      <Assign sap2010:Annotation.AnnotationText="Asignar la última fecha leida a la variable Fecha-final" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="975,104" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <ui:OutputDataTable DataTable="[Tabla_leida]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[textoTabla_leida]" />
+                      <Assign sap2010:Annotation.AnnotationText="Asignar la última fecha leida a la variable Fecha-final" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="873,104" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[Fecha_final]</OutArgument>
                         </Assign.To>
@@ -922,7 +925,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrar las filas con letras al principio del Excel" DataTable="[Tabla_leida]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="975,90" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[nueva]" SelectColumnsMode="Keep">
+                      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtrar las filas con letras al principio del Excel" DataTable="[Tabla_leida]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="873,90" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[nueva]" SelectColumnsMode="Keep">
                         <ui:FilterDataTable.Filters>
                           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                             <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -970,555 +973,1175 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:FilterDataTable>
-                      <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" sap2010:Annotation.AnnotationText="quitar columna de tipo de pieza" ColumnIndex="1" DataTable="[nueva]" DisplayName="Quitar columna de datos" sap:VirtualizedContainerService.HintSize="975,66" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+                      <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" sap2010:Annotation.AnnotationText="quitar columna de tipo de pieza" ColumnIndex="1" DataTable="[nueva]" DisplayName="Quitar columna de datos" sap:VirtualizedContainerService.HintSize="873,66" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RemoveDataColumn>
-                      <ui:OutputDataTable DataTable="[nueva]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="975,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[textoNueva]" />
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="975,62" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[textoNueva]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[nueva]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="975,3461" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                      <ui:OutputDataTable DataTable="[nueva]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[textoNueva]" />
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="873,62" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[textoNueva]" />
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[nueva]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="873,11640" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="fila" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="941,3341" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="839,11520" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="899,60" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[A1]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(3))]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="899,62" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[convert.ToString(fila(0))]" />
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="899,62" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[fecha]" />
-                              <If Condition="[fecha=convert.ToString(fila(0))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="899,2843" sap2010:WorkflowViewState.IdRef="If_2">
+                              <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="797,966" sap2010:WorkflowViewState.IdRef="MultipleAssign_13">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_262">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[piezastotales1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(1))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_263">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[piezasOK1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(2))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_264">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[A1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(3))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_265">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[B1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(4))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_266">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[C1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(5))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_267">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[D1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(6))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_268">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[E1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(7))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_269">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[F1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(8))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_270">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[G1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(9))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_271">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(10))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_272">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[I1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(11))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_273">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[J1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(12))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_274">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[K1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(13))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_275">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[L1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(14))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_276">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[M1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(15))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_277">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[N1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(16))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_278">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[O1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(17))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_279">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[P1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(18))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_280">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[Q1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(19))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_281">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[R1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(20))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_282">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[S1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(21))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_283">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(22))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_284">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[nachgear1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(23))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_285">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[bio1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(24))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_286">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[tipo1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(25))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_287">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[io1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(26))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_288">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[nio1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(27))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_289">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[geleise1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(28))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_290">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[containers1]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(29))]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <If Condition="[A1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_4">
                                 <If.Then>
-                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="478,2684" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,1136" sap2010:WorkflowViewState.IdRef="CommentOut_7">
-                                      <ui:CommentOut.Body>
-                                        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,1058" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,966" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
-                                            <ui:MultipleAssign.AssignOperations>
-                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_175">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[piezastotales1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(1))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_176">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[piezasOK1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(2))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_177">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[A1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(3))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_178">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[B1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(4))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_179">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[C1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(5))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_180">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[D1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(6))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_181">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[E1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(7))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_182">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[F1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(8))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_183">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[G1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(9))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_184">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(10))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_185">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[I1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(11))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_186">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[J1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(12))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_187">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[K1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(13))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_188">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[L1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(14))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_189">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[M1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(15))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_190">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[N1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(16))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_191">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[O1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(17))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_192">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[P1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(18))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_193">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[Q1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(19))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_194">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[R1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(20))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_195">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[S1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(21))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_196">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(22))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_197">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[nachgear1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(23))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_198">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[bio1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(24))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_199">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[tipo1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[convert.ToDouble(fila(0))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_200">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[io1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(25))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_201">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[nio1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(26))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_202">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[geleise1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(28))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_203">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[containers1]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(29))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                              </scg:List>
-                                            </ui:MultipleAssign.AssignOperations>
-                                          </ui:MultipleAssign>
-                                        </Sequence>
-                                      </ui:CommentOut.Body>
-                                    </ui:CommentOut>
-                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;La A es:&quot; &amp;A1]" />
-                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="436,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[A1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[B1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_5">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[B1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[C1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_6">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[C1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[D1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[D1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[E1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_8">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[E1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[F1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_9">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[F1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[G1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_10">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[G1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[H1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_11">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[H1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[I1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_12">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[I1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[J1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_13">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[J1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[K1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_14">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[K1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[L1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_15">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[L1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[M1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_16">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[M1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[N1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_17">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[N1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[O1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[O1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[P1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_18">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[P1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[Q1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_19">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[Q1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[R1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_21">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[R1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[S1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_20">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[S1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <If Condition="[T1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_22">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[T1]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">0</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[convert.ToString(fila(0))]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[fecha]" />
+                              <If Condition="[fecha=convert.ToString(fila(0))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,2594" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1369" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;La A es:&quot; &amp;A1]" />
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                                       <ui:MultipleAssign.AssignOperations>
                                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_82">
                                             <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:String">[SumaA]</OutArgument>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaA]</OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:String">[SumaA+A1]</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaA+convert.toint32(A1)]</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
                                         </scg:List>
                                       </ui:MultipleAssign.AssignOperations>
                                     </ui:MultipleAssign>
-                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,62" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="IGUAL" />
-                                    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,1074" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-                                      <ui:CommentOut.Body>
-                                        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,996" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,904" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
-                                            <ui:MultipleAssign.AssignOperations>
-                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">[Sumapiezastotales]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">[Sumapiezastotales+piezastotales]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">[SumapiezasOK]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(fila(2))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_85">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaA]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(3))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_86">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaB]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(4))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_87">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaC]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(5))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_88">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaD]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(6))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_89">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaE]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(7))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_90">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaF]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(8))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_91">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaG]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(9))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_92">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaH]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(10))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_93">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaI]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(11))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_94">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaJ]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(12))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_95">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaK]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(13))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_96">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaL]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(14))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_97">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaM]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(15))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_98">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaN]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(16))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_99">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaO]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(17))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_100">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaP]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(18))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_101">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaQ]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(19))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_102">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaR]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(20))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_103">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaS]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(21))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_104">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaT]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(22))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_105">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[Sumanachgear]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(23))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_106">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaBio]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(24))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_107">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[Sumaio]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(25))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_108">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[SumaNio]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(26))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_109">
-                                                  <ui:AssignOperation.To>
-                                                    <OutArgument x:TypeArguments="x:String">[Sumageleise]</OutArgument>
-                                                  </ui:AssignOperation.To>
-                                                  <ui:AssignOperation.Value>
-                                                    <InArgument x:TypeArguments="x:String">[Convert.ToInt32(fila(28))]</InArgument>
-                                                  </ui:AssignOperation.Value>
-                                                </ui:AssignOperation>
-                                              </scg:List>
-                                            </ui:MultipleAssign.AssignOperations>
-                                          </ui:MultipleAssign>
-                                        </Sequence>
-                                      </ui:CommentOut.Body>
-                                    </ui:CommentOut>
+                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="IGUAL" />
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,935" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumapiezastotales]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[Sumapiezastotales+convert.toint32(piezastotales1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumapiezasOK]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumapiezasOK+convert.toint32(piezasOK1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_85">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaA]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaA+convert.toint32(A1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_86">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaB]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaB+convert.toint32(B1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_87">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaC]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaC+convert.toint32(C1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_88">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaD]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaD+convert.toint32(D1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_89">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaE]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaE+convert.toint32(E1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_90">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaF]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaF+convert.toint32(F1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_91">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaG]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaG+convert.toint32(G1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_92">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaH]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaH+convert.toint32(H1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_93">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaI]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaI+convert.toint32(I1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_94">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaJ]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaJ+convert.toint32(J1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_95">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaK]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaK+convert.toint32(K1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_96">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaL]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaL+convert.toint32(L1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_97">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaM]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaM+convert.toint32(M1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_98">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaN]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaN+convert.toint32(N1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_99">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaO]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaO+convert.toint32(O1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_100">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaP]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaP+convert.toint32(P1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_101">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaQ]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaQ+convert.toint32(Q1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_102">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaR]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaR+convert.toint32(R1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_103">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaS]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaS+convert.toint32(S1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_104">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaT]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaT+convert.toint32(T1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_105">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumanachgear]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[Sumanachgear+convert.toint32(nachgear1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_106">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaBio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaBio+convert.toint32(bio1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_107">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumaio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[Sumaio+convert.toint32(io1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_108">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaNio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaNio+convert.toint32(nio1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_109">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumageleise]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[Sumageleise+convert.toint32(geleise1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_325">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaContainers]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[SumaContainers+convert.toint32(containers1)]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,323" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,2435" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="sd:DataRow">[filaNueva2]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="sd:DataRow">[tabla2.NewRow()]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,1028" sap2010:WorkflowViewState.IdRef="MultipleAssign_14">
                                       <ui:MultipleAssign.AssignOperations>
-                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_291">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("Piezas totales")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[Sumapiezastotales]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_292">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("Piezas correctas")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumapiezasOK]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_293">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("% correctas")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumapiezasOK/Sumapiezastotales*100]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_294">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("A")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaA]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_295">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("B")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaB]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_296">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("C")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaC]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_297">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("D")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaD]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_298">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("E")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaE]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_299">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("F")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaF]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_300">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("G")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaG]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_301">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("H")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaH]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_302">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("I")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaI]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_303">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("J")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaJ]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_304">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("K")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaK]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_305">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("L")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaL]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_306">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("M")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaM]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_307">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("N")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaN]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_308">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("O")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaO]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_309">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("P")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaP]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_310">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("Q")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaQ]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_311">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva("R")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaR]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_312">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("S")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaS]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_313">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("T")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaT]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_314">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("nachgear")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[Sumanachgear]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_315">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("bio")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaBio]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_316">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("io")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[Sumaio]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_317">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("nio")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaNio]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_318">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("porcentaje")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[SumaNio/Sumapiezastotales*100]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_319">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("geleise")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[Sumageleise]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_320">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("containers")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[Sumacontainers]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_322">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Object">[filaNueva2("fecha")]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Object">[fecha]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_7">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_110">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:String">[fecha]</OutArgument>
@@ -1527,12 +2150,234 @@
                                               <InArgument x:TypeArguments="x:String">[convert.ToString(fila(0))]</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
-                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_111">
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,935" sap2010:WorkflowViewState.IdRef="MultipleAssign_15">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_326">
                                             <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:String">[SumaA]</OutArgument>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumapiezastotales]</OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:String">0</InArgument>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_327">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumapiezasOK]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_328">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaA]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_329">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaB]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_330">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaC]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_331">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaD]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_332">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaE]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_333">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaF]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_334">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaG]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_335">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaH]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_336">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaI]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_337">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaJ]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_338">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaK]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_339">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaL]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_340">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaM]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_341">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaN]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_342">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaO]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_343">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaP]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_344">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaQ]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_345">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaR]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_346">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaS]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_347">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaT]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_348">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumanachgear]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_349">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaBio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_350">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumaio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_351">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaNio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_352">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Sumageleise]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_353">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaContainers]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
                                         </scg:List>
@@ -1542,7 +2387,8 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="899,62" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;La SUMA es:&quot; &amp;SumaA]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;La SUMA es:&quot; &amp;SumaA]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[&quot;La IO es:&quot; &amp;Sumaio]" />
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEachRow.Body>
