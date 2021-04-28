@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1101,17829</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1101,17747</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Ubicacion_ficheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -50,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -80,9 +80,10 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="1111,17764" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer ficheros" sap:VirtualizedContainerService.HintSize="1111,17682" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="x:String" Name="codigo" />
@@ -154,11 +155,7 @@
       <Variable x:TypeArguments="x:Int32" Name="Sumaio" />
       <Variable x:TypeArguments="x:Int32" Name="SumaNio" />
       <Variable x:TypeArguments="x:Int32" Name="Sumageleise" />
-      <Variable x:TypeArguments="x:String" Name="fecha">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;&quot;&amp;fechaini" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[&quot;&quot;&amp;fechaini]" Name="fecha" />
       <Variable x:TypeArguments="x:String" Name="textoTabla_leida" />
       <Variable x:TypeArguments="sd:DataTable" Name="Tabla_leida" />
       <Variable x:TypeArguments="sd:DataTable" Name="nueva" />
@@ -200,7 +197,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:BuildDataTable DataTable="[Fechas_tab]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="1069,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Fecha&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Fecha&gt;text&lt;/Fecha&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1069,104" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Asignar al Array &quot;ficheros&quot; las direcciones de los ficheros dentro de la carpeta" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1069,102" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[ficheros]</OutArgument>
       </Assign.To>
@@ -213,31 +210,31 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="1069,17429" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Por cada fichero de la carpeta" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="1069,17349" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="1033,17263" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="1033,17184" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="991,17171" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="991,17092" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[item]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="957,17062" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="957,16983" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,3592" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,3586" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -251,32 +248,32 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelReadRange>
                       <ui:OutputDataTable DataTable="[tabla]" DisplayName="Private: Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="410,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[textotabla1]" />
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,62" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[textotabla1]" />
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[textotabla1]" />
                       <ui:ExcelReadCell Cell="D4" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="Sheet1">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="x:String">[codigo]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,62" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[&quot;codigo&quot; &amp;codigo]" />
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[&quot;codigo&quot; &amp;codigo]" />
                       <ui:ExcelReadCell Cell="A31" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="Sheet1">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="x:String">[fechaini]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,62" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[&quot;fechaini&quot; &amp;fechaini]" />
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[&quot;fechaini&quot; &amp;fechaini]" />
                       <ui:ExcelReadCell Cell="B28" DisplayName="Leer celda" sap:VirtualizedContainerService.HintSize="410,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="Sheet1">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="x:Double">[tipo]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,62" sap2010:WorkflowViewState.IdRef="WriteLine_19" Text="[&quot;tipo&quot; &amp;tipo]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[tabla]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="410,2603" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_19" Text="[&quot;tipo&quot; &amp;tipo]" />
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[tabla]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="410,2601" sap2010:WorkflowViewState.IdRef="ForEachRow_5">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="fila" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,2483" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,2482" sap2010:WorkflowViewState.IdRef="Sequence_20">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -520,7 +517,7 @@
                                   </scg:List>
                                 </ui:MultipleAssign.AssignOperations>
                               </ui:MultipleAssign>
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[convert.Tostring(A)]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[convert.Tostring(A)]" />
                               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="sd:DataRow">[filaNueva]</OutArgument>
@@ -888,7 +885,7 @@
                       <ui:OutputDataTable DataTable="[nueva]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[textoNueva]" />
                       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[textoNueva]" />
                     </Sequence>
-                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,12580" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="915,12507" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -912,7 +909,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelReadRange>
                       <ui:OutputDataTable DataTable="[Tabla_leida]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[textoTabla_leida]" />
-                      <Assign sap2010:Annotation.AnnotationText="Asignar la última fecha leida a la variable Fecha-final" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="873,104" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign sap2010:Annotation.AnnotationText="Asignar la última fecha leida a la variable Fecha-final" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="873,102" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[Fecha_final]</OutArgument>
                         </Assign.To>
@@ -973,7 +970,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:FilterDataTable>
-                      <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" sap2010:Annotation.AnnotationText="quitar columna de tipo de pieza" ColumnIndex="1" DataTable="[nueva]" DisplayName="Quitar columna de datos" sap:VirtualizedContainerService.HintSize="873,66" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+                      <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" sap2010:Annotation.AnnotationText="quitar columna de tipo de pieza" ColumnIndex="1" DataTable="[nueva]" DisplayName="Quitar columna de datos" sap:VirtualizedContainerService.HintSize="873,64" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -981,14 +978,14 @@
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:RemoveDataColumn>
                       <ui:OutputDataTable DataTable="[nueva]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[textoNueva]" />
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="873,62" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[textoNueva]" />
-                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[nueva]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="873,11640" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="873,61" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[textoNueva]" />
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[nueva]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="873,11572" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
                         <ui:ForEachRow.Body>
                           <ActivityAction x:TypeArguments="sd:DataRow">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="fila" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="839,11520" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="839,11453" sap2010:WorkflowViewState.IdRef="Sequence_18">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1210,7 +1207,7 @@
                                         <OutArgument x:TypeArguments="x:String">[nio1]</OutArgument>
                                       </ui:AssignOperation.To>
                                       <ui:AssignOperation.Value>
-                                        <InArgument x:TypeArguments="x:String">[convert.Tostring(fila(27))]</InArgument>
+                                        <InArgument x:TypeArguments="x:String">[convert.ToString(fila(27))]</InArgument>
                                       </ui:AssignOperation.Value>
                                     </ui:AssignOperation>
                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_289">
@@ -1232,7 +1229,7 @@
                                   </scg:List>
                                 </ui:MultipleAssign.AssignOperations>
                               </ui:MultipleAssign>
-                              <If Condition="[A1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If Condition="[A1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_4">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1251,7 +1248,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[B1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If Condition="[B1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_5">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1270,7 +1267,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[C1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_6">
+                              <If Condition="[C1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_6">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1289,7 +1286,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[D1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_7">
+                              <If Condition="[D1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_7">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1308,7 +1305,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[E1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_8">
+                              <If Condition="[E1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_8">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1327,7 +1324,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[F1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_9">
+                              <If Condition="[F1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_9">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1346,7 +1343,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[G1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_10">
+                              <If Condition="[G1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_10">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1365,7 +1362,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[H1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_11">
+                              <If Condition="[H1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_11">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1384,7 +1381,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[I1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_12">
+                              <If Condition="[I1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_12">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1403,7 +1400,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[J1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_13">
+                              <If Condition="[J1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_13">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1422,7 +1419,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[K1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_14">
+                              <If Condition="[K1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_14">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1441,7 +1438,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[L1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_15">
+                              <If Condition="[L1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_15">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_35">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1460,7 +1457,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[M1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_16">
+                              <If Condition="[M1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_16">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_36">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1479,7 +1476,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[N1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_17">
+                              <If Condition="[N1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_17">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_37">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1498,7 +1495,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[O1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If Condition="[O1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1517,7 +1514,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[P1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_18">
+                              <If Condition="[P1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_18">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_38">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1536,7 +1533,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[Q1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_19">
+                              <If Condition="[Q1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_19">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1555,7 +1552,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[R1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_21">
+                              <If Condition="[R1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_21">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_41">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1574,7 +1571,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[S1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_20">
+                              <If Condition="[S1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_20">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1593,7 +1590,7 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <If Condition="[T1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,331" sap2010:WorkflowViewState.IdRef="If_22">
+                              <If Condition="[T1 = &quot;&quot;]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,328" sap2010:WorkflowViewState.IdRef="If_22">
                                 <If.Then>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -1612,17 +1609,17 @@
                                   </Sequence>
                                 </If.Then>
                               </If>
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[convert.ToString(fila(0))]" />
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[fecha]" />
-                              <If Condition="[fecha=convert.ToString(fila(0))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,2594" sap2010:WorkflowViewState.IdRef="If_2">
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[convert.ToString(fila(0))]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[fecha]" />
+                              <If Condition="[fecha=convert.ToString(fila(0))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,2591" sap2010:WorkflowViewState.IdRef="If_2">
                                 <If.Then>
-                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1369" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1274" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;La A es:&quot; &amp;A1]" />
+                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[&quot;La A es:&quot; &amp;A1]" />
                                     <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                                       <ui:MultipleAssign.AssignOperations>
                                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -1637,8 +1634,8 @@
                                         </scg:List>
                                       </ui:MultipleAssign.AssignOperations>
                                     </ui:MultipleAssign>
-                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="IGUAL" />
-                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,935" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="IGUAL" />
+                                    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,842" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                                       <ui:MultipleAssign.AssignOperations>
                                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="64">
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_83">
@@ -1841,37 +1838,13 @@
                                               <InArgument x:TypeArguments="x:Int32">[Sumaio+convert.toint32(io1)]</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
-                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_108">
-                                            <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:Int32">[SumaNio]</OutArgument>
-                                            </ui:AssignOperation.To>
-                                            <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:Int32">[SumaNio+convert.toint32(nio1)]</InArgument>
-                                            </ui:AssignOperation.Value>
-                                          </ui:AssignOperation>
-                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_109">
-                                            <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:Int32">[Sumageleise]</OutArgument>
-                                            </ui:AssignOperation.To>
-                                            <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:Int32">[Sumageleise+convert.toint32(geleise1)]</InArgument>
-                                            </ui:AssignOperation.Value>
-                                          </ui:AssignOperation>
-                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_325">
-                                            <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:Int32">[SumaContainers]</OutArgument>
-                                            </ui:AssignOperation.To>
-                                            <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:Int32">[SumaContainers+convert.toint32(containers1)]</InArgument>
-                                            </ui:AssignOperation.Value>
-                                          </ui:AssignOperation>
                                         </scg:List>
                                       </ui:MultipleAssign.AssignOperations>
                                     </ui:MultipleAssign>
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,2435" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,2434" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2356,14 +2329,6 @@
                                               <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
-                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_351">
-                                            <ui:AssignOperation.To>
-                                              <OutArgument x:TypeArguments="x:Int32">[SumaNio]</OutArgument>
-                                            </ui:AssignOperation.To>
-                                            <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                            </ui:AssignOperation.Value>
-                                          </ui:AssignOperation>
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_352">
                                             <ui:AssignOperation.To>
                                               <OutArgument x:TypeArguments="x:Int32">[Sumageleise]</OutArgument>
@@ -2380,15 +2345,23 @@
                                               <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_354">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[SumaNio]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
                                         </scg:List>
                                       </ui:MultipleAssign.AssignOperations>
                                     </ui:MultipleAssign>
-                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="NO IGUAL" />
+                                    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="NO IGUAL" />
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;La SUMA es:&quot; &amp;SumaA]" />
-                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[&quot;La IO es:&quot; &amp;Sumaio]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[&quot;La SUMA es:&quot; &amp;SumaA]" />
+                              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[&quot;La IO es:&quot; &amp;Sumaio]" />
                             </Sequence>
                           </ActivityAction>
                         </ui:ForEachRow.Body>
