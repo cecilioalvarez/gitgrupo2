@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Grabación" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,3392" sap2010:WorkflowViewState.IdRef="Secuencia_Grabación_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Grabación" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,6370" sap2010:WorkflowViewState.IdRef="Secuencia_Grabación_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -63,28 +63,28 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Secuencia_Grabación" sap:VirtualizedContainerService.HintSize="784,3327" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia_Grabación" sap:VirtualizedContainerService.HintSize="556,6305" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="742,3235" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="514,6213" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="704,3030" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,6008" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="662,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Responsable de empresa cliente&#xD;&#xA;" />
-          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="662,2843" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
+          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Empresa Cliente" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="434,695" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
             <ui:ExcelApplicationScope.Body>
               <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="628,2734" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,586" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="datos" />
                   </Sequence.Variables>
@@ -93,7 +93,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="586,137" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
                     </ui:Click.CursorPosition>
@@ -115,7 +115,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:Click>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="586,154" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="c" KeyModifiers="Ctrl">
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="c" KeyModifiers="Ctrl">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1557dd72-318e-44a9-8b6e-199ab73769e3" InformativeScreenshot="316527142484b500c3bde839c5b611c9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -127,200 +127,444 @@
                       </ui:Target>
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
-                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="586,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_2" TimeoutMS="1000">
+                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_3" TimeoutMS="1000">
                     <ui:GetFromClipboard.Result>
                       <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
                     </ui:GetFromClipboard.Result>
                   </ui:GetFromClipboard>
-                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="586,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[datos.Trim()]" />
-                  <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="586,2108" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
-                    <p:WordApplicationScope.Body>
-                      <ActivityAction x:TypeArguments="ui:WordDocument">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="552,1999" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="510,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-                            <ui:Click.CursorPosition>
-                              <ui:CursorPosition Position="Center">
-                                <ui:CursorPosition.OffsetX>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetX>
-                                <ui:CursorPosition.OffsetY>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:CursorPosition.OffsetY>
-                              </ui:CursorPosition>
-                            </ui:Click.CursorPosition>
-                            <ui:Click.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:Click.Target>
-                          </ui:Click>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="510,116" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="v" KeyModifiers="Ctrl">
-                            <ui:SendHotkey.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:SendHotkey.Target>
-                          </ui:SendHotkey>
-                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="510,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="back" KeyModifiers="None">
-                            <ui:SendHotkey.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
-                                <ui:Target.TimeoutMS>
-                                  <InArgument x:TypeArguments="x:Int32" />
-                                </ui:Target.TimeoutMS>
-                                <ui:Target.WaitForReady>
-                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                </ui:Target.WaitForReady>
-                              </ui:Target>
-                            </ui:SendHotkey.Target>
-                          </ui:SendHotkey>
-                          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="510,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Responsable de empresa subcontratada" />
-                          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,1354" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
-                            <ui:ExcelApplicationScope.Body>
-                              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="476,1245" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                  <Sequence.Variables>
-                                    <Variable x:TypeArguments="x:String" Name="datos" />
-                                  </Sequence.Variables>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                                    <ui:Click.CursorPosition>
-                                      <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
-                                    </ui:Click.CursorPosition>
-                                    <ui:Click.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f501699-a45b-4905-8117-7a0d98a55131" InformativeScreenshot="617698268d20d7e82f69c3ab09c42bf2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                        <ui:Target.WaitForReady>
-                                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                                        </ui:Target.WaitForReady>
-                                      </ui:Target>
-                                    </ui:Click.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:Click>
-                                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="c" KeyModifiers="Ctrl">
-                                    <ui:SendHotkey.Target>
-                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1557dd72-318e-44a9-8b6e-199ab73769e3" InformativeScreenshot="316527142484b500c3bde839c5b611c9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
-                                        <ui:Target.TimeoutMS>
-                                          <InArgument x:TypeArguments="x:Int32" />
-                                        </ui:Target.TimeoutMS>
-                                        <ui:Target.WaitForReady>
-                                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                                        </ui:Target.WaitForReady>
-                                      </ui:Target>
-                                    </ui:SendHotkey.Target>
-                                  </ui:SendHotkey>
-                                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_1" TimeoutMS="1000">
-                                    <ui:GetFromClipboard.Result>
-                                      <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
-                                    </ui:GetFromClipboard.Result>
-                                  </ui:GetFromClipboard>
-                                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[datos.Trim()]" />
-                                  <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="434,619" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
-                                    <p:WordApplicationScope.Body>
-                                      <ActivityAction x:TypeArguments="ui:WordDocument">
-                                        <ActivityAction.Argument>
-                                          <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
-                                        </ActivityAction.Argument>
-                                        <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                                            <ui:Click.CursorPosition>
-                                              <ui:CursorPosition Position="Center">
-                                                <ui:CursorPosition.OffsetX>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:CursorPosition.OffsetX>
-                                                <ui:CursorPosition.OffsetY>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:CursorPosition.OffsetY>
-                                              </ui:CursorPosition>
-                                            </ui:Click.CursorPosition>
-                                            <ui:Click.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
-                                                <ui:Target.TimeoutMS>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:Click.Target>
-                                          </ui:Click>
-                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
-                                            <ui:SendHotkey.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
-                                                <ui:Target.TimeoutMS>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:SendHotkey.Target>
-                                          </ui:SendHotkey>
-                                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="back" KeyModifiers="None">
-                                            <ui:SendHotkey.Target>
-                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
-                                                <ui:Target.TimeoutMS>
-                                                  <InArgument x:TypeArguments="x:Int32" />
-                                                </ui:Target.TimeoutMS>
-                                                <ui:Target.WaitForReady>
-                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                </ui:Target.WaitForReady>
-                                              </ui:Target>
-                                            </ui:SendHotkey.Target>
-                                          </ui:SendHotkey>
-                                        </Sequence>
-                                      </ActivityAction>
-                                    </p:WordApplicationScope.Body>
-                                  </p:WordApplicationScope>
-                                </Sequence>
-                              </ActivityAction>
-                            </ui:ExcelApplicationScope.Body>
-                          </ui:ExcelApplicationScope>
-                        </Sequence>
-                      </ActivityAction>
-                    </p:WordApplicationScope.Body>
-                  </p:WordApplicationScope>
+                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[datos.Trim()]" />
                 </Sequence>
               </ActivityAction>
             </ui:ExcelApplicationScope.Body>
           </ui:ExcelApplicationScope>
+          <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="434,619" sap2010:WorkflowViewState.IdRef="WordApplicationScope_4">
+            <p:WordApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WordDocument">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="v" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="back" KeyModifiers="None">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </ActivityAction>
+            </p:WordApplicationScope.Body>
+          </p:WordApplicationScope>
+          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Responsable de empresa cliente&#xD;&#xA;" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="434,695" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,586" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="datos" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f501699-a45b-4905-8117-7a0d98a55131" InformativeScreenshot="617698268d20d7e82f69c3ab09c42bf2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="c" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1557dd72-318e-44a9-8b6e-199ab73769e3" InformativeScreenshot="316527142484b500c3bde839c5b611c9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_4" TimeoutMS="1000">
+                    <ui:GetFromClipboard.Result>
+                      <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
+                    </ui:GetFromClipboard.Result>
+                  </ui:GetFromClipboard>
+                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[datos.Trim()]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="434,619" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
+            <p:WordApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WordDocument">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_11" Key="v" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_12" Key="back" KeyModifiers="None">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </ActivityAction>
+            </p:WordApplicationScope.Body>
+          </p:WordApplicationScope>
+          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Empresa Subcontratada&#xD;&#xA;" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="434,695" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,586" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="datos" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f501699-a45b-4905-8117-7a0d98a55131" InformativeScreenshot="617698268d20d7e82f69c3ab09c42bf2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="c" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1557dd72-318e-44a9-8b6e-199ab73769e3" InformativeScreenshot="316527142484b500c3bde839c5b611c9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_2" TimeoutMS="1000">
+                    <ui:GetFromClipboard.Result>
+                      <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
+                    </ui:GetFromClipboard.Result>
+                  </ui:GetFromClipboard>
+                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[datos.Trim()]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="434,619" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+            <p:WordApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WordDocument">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="v" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="back" KeyModifiers="None">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </ActivityAction>
+            </p:WordApplicationScope.Body>
+          </p:WordApplicationScope>
+          <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Responsable de empresa subcontratada" />
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="434,695" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\alumnogti\Downloads\PlantillaSalida.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,586" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="datos" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="Responsable de empresa subcon" ClickType="CLICK_SINGLE" DisplayName="Clic 'D7'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition OffsetX="19" OffsetY="11" Position="TopLeft" />
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f501699-a45b-4905-8117-7a0d98a55131" InformativeScreenshot="617698268d20d7e82f69c3ab09c42bf2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'D7'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="c" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1557dd72-318e-44a9-8b6e-199ab73769e3" InformativeScreenshot="316527142484b500c3bde839c5b611c9" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='D7' tableCol='3' tableRow='6' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_1" TimeoutMS="1000">
+                    <ui:GetFromClipboard.Result>
+                      <OutArgument x:TypeArguments="x:String">[datos]</OutArgument>
+                    </ui:GetFromClipboard.Result>
+                  </ui:GetFromClipboard>
+                  <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[datos.Trim()]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+          <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" sap:VirtualizedContainerService.HintSize="434,619" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+            <p:WordApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WordDocument">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'elemento  Celda de tabla'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="e113630e42d06830433c5cad4654dd98" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='3' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3ad763bb-7d4d-4b7b-a81f-8fef7bcd76df">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="back" KeyModifiers="None">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7182aad6-91ee-4834-a27f-9a36d37a8d1c">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </ActivityAction>
+            </p:WordApplicationScope.Body>
+          </p:WordApplicationScope>
         </Sequence>
       </TryCatch.Try>
     </TryCatch>
