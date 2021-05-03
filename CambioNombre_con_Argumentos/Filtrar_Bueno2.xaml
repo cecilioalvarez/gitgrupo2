@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>862,1429</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2119</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Filtrar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -66,12 +66,16 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Filtrar" sap:VirtualizedContainerService.HintSize="821,1364" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Filtrar" sap:VirtualizedContainerService.HintSize="821,2054" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="Coinci" />
+      <Variable x:TypeArguments="x:Boolean" Name="nuevo" />
+      <Variable x:TypeArguments="x:String" Name="asunto" />
+      <Variable x:TypeArguments="x:String" Name="texto" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -86,24 +90,24 @@
         <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(URLcarpeta)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="779,1172" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ficheros]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="779,1272" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ficheros]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="743,1038" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="743,1138" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[System.Text.RegularExpressions.Regex.Match(item,&quot;\d{2}_\d{2}_\d{4}_\d{2}_\d{2}_\d{2}&quot;).Length&gt;0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="701,946" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[System.Text.RegularExpressions.Regex.Match(item,&quot;\d{2}_\d{2}_\d{4}_\d{2}_\d{2}_\d{2}&quot;).Length&gt;0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="701,1046" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="nada" />
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="426,788" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="426,888" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="FechaHora" />
                     <Variable x:TypeArguments="x:String" Name="URLNombreNuevo" />
@@ -154,6 +158,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Delay>
+                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[nuevo]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </If.Else>
             </If>
@@ -161,5 +173,48 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
+    <If Condition="[nuevo = False]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="779,550" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="421,373" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="379,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[asunto]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">Mensaje Automatizado UiPath: ERROR en recepción de datos.</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[texto]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">["No se han encontrado archivos nuevos. Necesaria acción manual para el envío de nuevo archivo de Calidad. La acción de lectura se reintentará en 2 días."]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="CambioNombre_con_Argumentos\EnviarCorreos_Bueno2.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Asunto">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="asunto" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Cuerpo">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="texto" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+    </If>
   </Sequence>
 </Activity>
