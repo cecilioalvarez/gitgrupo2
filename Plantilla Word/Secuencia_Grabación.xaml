@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Grabación" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,42262" sap2010:WorkflowViewState.IdRef="Secuencia_Grabación_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Grabación" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1328,42262" sap2010:WorkflowViewState.IdRef="Secuencia_Grabación_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -71,17 +71,9 @@
       <Variable x:TypeArguments="x:String" Name="Responsable_de_empresa_subcontratada" />
       <Variable x:TypeArguments="x:String" Name="Empresa_Cliente" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_Empresa_Cliente" />
-      <Variable x:TypeArguments="x:String" Name="Ubicacion_Excel">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Downloads\PlantillaSalida_3Hojas.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Downloads\PlantillaSalida_3Hojas.xlsx" Name="Ubicacion_Excel" />
       <Variable x:TypeArguments="x:String" Name="Actividad" />
-      <Variable x:TypeArguments="x:String" Name="Ubicacion_Word">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Desktop\Net\Plantilla.docx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" Name="Ubicacion_Word" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_calidad" />
       <Variable x:TypeArguments="x:String" Name="A" />
       <Variable x:TypeArguments="x:String" Name="B" />
@@ -103,6 +95,8 @@
       <Variable x:TypeArguments="x:String" Name="R" />
       <Variable x:TypeArguments="x:String" Name="S" />
       <Variable x:TypeArguments="x:String" Name="T" />
+      <Variable x:TypeArguments="x:String" Name="Nachgearbeitet" />
+      <Variable x:TypeArguments="x:String" Name="B_I_O" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -3241,7 +3235,7 @@
               </ui:SendHotkey>
               <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_33" TimeoutMS="1000">
                 <ui:GetFromClipboard.Result>
-                  <OutArgument x:TypeArguments="x:String">[Numero_de_pedido]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[T]</OutArgument>
                 </ui:GetFromClipboard.Result>
               </ui:GetFromClipboard>
             </Sequence>
@@ -3285,7 +3279,7 @@
                   </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
-              <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="{x:Null}" DisplayName="Escribir en 'elemento del'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_28">
+              <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" DisplayName="Escribir en 'elemento del'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_28" Text="[T]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09d2bf70-5f7d-4096-a849-28d85ce6483b" InformativeScreenshot="7829ea69cca32a3503ea280ed93bf88f" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento del encabezado' tableCol='0' tableRow='5' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -3353,7 +3347,7 @@
               </ui:SendHotkey>
               <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_34" TimeoutMS="1000">
                 <ui:GetFromClipboard.Result>
-                  <OutArgument x:TypeArguments="x:String">[Numero_de_pedido]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[Nachgearbeitet]</OutArgument>
                 </ui:GetFromClipboard.Result>
               </ui:GetFromClipboard>
             </Sequence>
@@ -3397,7 +3391,7 @@
                   </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
-              <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="{x:Null}" DisplayName="Escribir en 'elemento del'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_29">
+              <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" DisplayName="Escribir en 'elemento del'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_29" Text="[Nachgearbeitet]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09d2bf70-5f7d-4096-a849-28d85ce6483b" InformativeScreenshot="7829ea69cca32a3503ea280ed93bf88f" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento del encabezado' tableCol='0' tableRow='5' /&gt;">
                     <ui:Target.TimeoutMS>
