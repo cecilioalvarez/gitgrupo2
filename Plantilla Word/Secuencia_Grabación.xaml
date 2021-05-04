@@ -82,6 +82,27 @@
           <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Desktop\Net\Plantilla.docx</Literal>
         </Variable.Default>
       </Variable>
+      <Variable x:TypeArguments="x:String" Name="Responsable_de_calidad" />
+      <Variable x:TypeArguments="x:String" Name="A" />
+      <Variable x:TypeArguments="x:String" Name="B" />
+      <Variable x:TypeArguments="x:String" Name="C" />
+      <Variable x:TypeArguments="x:String" Name="D" />
+      <Variable x:TypeArguments="x:String" Name="E" />
+      <Variable x:TypeArguments="x:String" Name="F" />
+      <Variable x:TypeArguments="x:String" Name="G" />
+      <Variable x:TypeArguments="x:String" Name="H" />
+      <Variable x:TypeArguments="x:String" Name="I" />
+      <Variable x:TypeArguments="x:String" Name="J" />
+      <Variable x:TypeArguments="x:String" Name="K" />
+      <Variable x:TypeArguments="x:String" Name="L" />
+      <Variable x:TypeArguments="x:String" Name="M" />
+      <Variable x:TypeArguments="x:String" Name="N" />
+      <Variable x:TypeArguments="x:String" Name="O" />
+      <Variable x:TypeArguments="x:String" Name="P" />
+      <Variable x:TypeArguments="x:String" Name="Q" />
+      <Variable x:TypeArguments="x:String" Name="R" />
+      <Variable x:TypeArguments="x:String" Name="S" />
+      <Variable x:TypeArguments="x:String" Name="T" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
