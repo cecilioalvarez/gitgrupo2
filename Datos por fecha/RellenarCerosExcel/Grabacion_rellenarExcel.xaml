@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680,1736</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>729,1736</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Grabacion_rellenarExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -70,10 +70,13 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Grabacion_rellenarExcel" sap:VirtualizedContainerService.HintSize="476,1671" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="nombreCelda" />
+      <Variable x:TypeArguments="x:String" Name="nombreFichero" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -86,10 +89,6 @@
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,1470" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="nombreCelda" />
-              <Variable x:TypeArguments="x:String" Name="nombreFichero" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,7 +109,7 @@
                 <ui:CursorPosition OffsetX="44" OffsetY="27" Position="TopLeft" />
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aeb34357-31df-4b48-9163-22248bedae84" InformativeScreenshot="6d37c5499a2c273a2ac0f89d72f82c97" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='*' idx='1' /&gt;&lt;uia idx='462' /&gt;&lt;uia cls='NetUIChunk' name='Modificar' /&gt;&lt;uia cls='NetUIAnchor' name='Buscar y seleccionar' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aeb34357-31df-4b48-9163-22248bedae84" InformativeScreenshot="6d37c5499a2c273a2ac0f89d72f82c97" Selector="[String.Format(&quot;&lt;wnd app='excel.exe' cls='XLMAIN' title='{0}' idx='1' /&gt;&lt;uia idx='462' /&gt;&lt;uia cls='NetUIChunk' name='Modificar' /&gt;&lt;uia cls='NetUIAnchor' name='Buscar y seleccionar' /&gt;&quot;, nombreFichero)]">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
