@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="variableFiltro" Type="InArgument(x:String)" />
     <x:Property Name="TablaImprimir" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="celdaExcel" Type="InArgument(x:String)" />
+    <x:Property Name="celdaExcel3" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -71,6 +71,7 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="EscribirEnExcel" sap:VirtualizedContainerService.HintSize="476,709" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -91,9 +92,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[celdaExcel]" />
-            <ui:ExcelWriteCell Cell="[&quot;A&quot;&amp;celdaExcel]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet3" Text="[variableFiltro]" />
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[TablaImprimir]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet3" StartingCell="[&quot;B&quot;&amp;celdaExcel]" />
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[celdaExcel3]" />
+            <ui:ExcelWriteCell Cell="[&quot;A&quot;&amp;celdaExcel3]" DisplayName="Escribir celda" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Sheet3" Text="[variableFiltro]" />
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[TablaImprimir]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet3" StartingCell="[&quot;B&quot;&amp;celdaExcel3]" />
             <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="escribir en Excel ACABADO" />
           </Sequence>
         </ActivityAction>

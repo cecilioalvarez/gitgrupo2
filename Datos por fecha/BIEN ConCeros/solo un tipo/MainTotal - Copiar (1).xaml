@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="MainTotal" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="celdaExcel" Type="InOutArgument(x:String)" />
     <x:Property Name="ficheros" Type="InArgument(s:String[])" />
     <x:Property Name="indiceficheros" Type="InArgument(x:Int32)" />
+    <x:Property Name="celdaExcel1" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>678,1652</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,1854</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainTotal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,1587" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,1991" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="TablaTipoPieza" />
       <Variable x:TypeArguments="sd:DataTable" Name="nueva2" />
@@ -86,7 +86,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="crear tabla sin fechas, poniendo en la primera columna el TIPO&#xA; y rellena las celdas vacía con 0" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="499,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\FuncionTablaFiltradaTipoPieza.xaml">
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Maintotal &quot;&amp; celdaExcel1]" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="crear tabla sin fechas, poniendo en la primera columna el TIPO&#xA; y rellena las celdas vacía con 0" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="499,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\solo un tipo\FuncionTablaFiltradaTipoPieza - Copiar (1).xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva2">
           <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="nueva2" />
@@ -120,9 +121,11 @@
         <InArgument x:TypeArguments="s:String[]">[{"4M0 505 235 AT", "4M0 505 235 BA","4M0 505 235 BB","4M0 505 235 BC","4M0 505 235 BD","4M0 505 235 BE","4M0 505 235 BF"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="499,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[variableFiltroArray(0)]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Maintotal &quot;&amp; celdaExcel1]" />
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="499,230" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,7 +133,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[celdaExcel]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[celdaExcel1]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">31</InArgument>
@@ -139,19 +142,19 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="499,831" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[variableFiltroArray]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="499,932" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[variableFiltroArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="463,697" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="463,798" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="421,605" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="421,706" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,7 +168,8 @@
                   <InArgument x:TypeArguments="x:String">[item]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\MainTipoPIEZA_ATConCero.xaml">
+              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[celdaExcel1]" />
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\solo un tipo\MainTipoPIEZA_ATConCero - Copiar (1).xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaTipoPieza">
                     <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaTipoPieza" />
@@ -174,7 +178,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="variableFiltro" />
                   </InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="celdaExcel">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel" />
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel1" />
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
@@ -188,13 +192,13 @@
               </Assign>
               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[celdaExcel]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[celdaExcel1]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[(Convert.ToInt32(celdaExcel)+1).ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[(Convert.ToInt32(celdaExcel1)+1).ToString]</InArgument>
                 </Assign.Value>
               </Assign>
-              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;vuelta &quot; &amp; i &amp; &quot; ; celdaExcel: &quot; &amp; celdaExcel]" />
+              <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;vuelta &quot; &amp; i &amp; &quot; ; celdaExcel: &quot; &amp; celdaExcel1]" />
             </Sequence>
           </Sequence>
         </ActivityAction>
