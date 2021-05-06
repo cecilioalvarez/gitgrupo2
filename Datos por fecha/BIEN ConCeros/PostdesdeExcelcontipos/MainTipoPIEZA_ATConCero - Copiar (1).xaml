@@ -4,6 +4,7 @@
     <x:Property Name="variableFiltro" Type="InArgument(x:String)" />
     <x:Property Name="celdaExcel" Type="InArgument(x:String)" />
     <x:Property Name="variableFiltroArray" Type="InArgument(s:String[])" />
+    <x:Property Name="TablaAGuardar" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -76,13 +77,12 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PruebasTipoPIEZA" sap:VirtualizedContainerService.HintSize="478,1340" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PruebasTipoPIEZA" sap:VirtualizedContainerService.HintSize="478,1188" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="textoTablaTipoPieza" />
       <Variable x:TypeArguments="sd:DataTable" Name="TablaAT" />
       <Variable x:TypeArguments="x:String" Name="textoTablaAT" />
       <Variable x:TypeArguments="x:Int32" Name="sumaTotal" />
-      <Variable x:TypeArguments="x:String" Name="textoTablaAImprimir" />
       <Variable x:TypeArguments="x:Int32" Name="IOTotal" />
       <Variable x:TypeArguments="x:Int32" Name="ATotal" />
       <Variable x:TypeArguments="x:Int32" Name="BTotal" />
@@ -111,7 +111,7 @@
       <Variable x:TypeArguments="x:Int32" Name="RTotal" />
       <Variable x:TypeArguments="x:Int32" Name="STotal" />
       <Variable x:TypeArguments="x:Int32" Name="TTotal" />
-      <Variable x:TypeArguments="sd:DataTable" Name="TablaAGuardar" />
+      <Variable x:TypeArguments="x:String" Name="textoTablaAGuardar" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -270,8 +270,8 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:OutputDataTable DataTable="[TablaAGuardar]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaAImprimir]" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;MainTipoAT&quot; &amp;textoTablaAImprimir]" />
+    <ui:OutputDataTable DataTable="[TablaAGuardar]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaAGuardar]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;MainTipoAT&quot; &amp;textoTablaAGuardar]" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[celdaExcel]" />
     <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
@@ -291,18 +291,5 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\Paso2.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAGuardar">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="celdaExcel">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="variableFiltroArray" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

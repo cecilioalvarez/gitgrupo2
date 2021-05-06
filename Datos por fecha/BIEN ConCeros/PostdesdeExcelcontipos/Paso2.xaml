@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>561,1404</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>560,1404</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Paso2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -342,6 +342,9 @@
                 <OutArgument x:TypeArguments="x:Int32" x:Key="stundenTotal">
                   <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="stundenTotal" />
                 </OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="variableFiltro" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>

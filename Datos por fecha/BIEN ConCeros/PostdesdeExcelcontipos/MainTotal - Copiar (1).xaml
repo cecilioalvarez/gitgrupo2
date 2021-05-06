@@ -3,6 +3,7 @@
     <x:Property Name="ficheros" Type="InArgument(s:String[])" />
     <x:Property Name="indiceficheros" Type="InArgument(x:Int32)" />
     <x:Property Name="celdaExcel1" Type="InOutArgument(x:String)" />
+    <x:Property Name="TablaAGuardar" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -177,6 +178,9 @@
                   <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">
                     <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="variableFiltroArray" />
                   </InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="TablaAGuardar">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_5">
