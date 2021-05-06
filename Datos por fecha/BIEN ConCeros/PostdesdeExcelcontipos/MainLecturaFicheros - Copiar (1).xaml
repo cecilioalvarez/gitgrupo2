@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="MainLectuaFicheros" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,1516" sap2010:WorkflowViewState.IdRef="MainLectuaFicheros_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MainLectuaFicheros" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="561,1668" sap2010:WorkflowViewState.IdRef="MainLectuaFicheros_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
       <x:String>System.Activities</x:String>
@@ -59,7 +59,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainLecturaFicheros" sap:VirtualizedContainerService.HintSize="499,1451" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MainLecturaFicheros" sap:VirtualizedContainerService.HintSize="499,1603" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="ficheros" />
       <Variable x:TypeArguments="x:String" Name="celdaExcel0" />
@@ -133,11 +133,17 @@
               <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;&quot; &amp; ficheros(0)]" />
             </Sequence>
             <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;MinLecturaFich: &quot;&amp; celdaExcel0]" />
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\solo un tipo\MainTotal - Copiar (1).xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\MainTotal - Copiar (1).xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">[indiceficheros]</InArgument>
-                <InOutArgument x:TypeArguments="x:String" x:Key="celdaExcel1">[celdaExcel0]</InOutArgument>
+                <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
+                  <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="indiceficheros" />
+                </InArgument>
+                <InOutArgument x:TypeArguments="x:String" x:Key="celdaExcel1">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="celdaExcel0" />
+                </InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -152,5 +158,18 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="457,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\Paso2.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAGuardar">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="celdaExcel">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="variableFiltroArray" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
