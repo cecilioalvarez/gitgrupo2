@@ -78,7 +78,11 @@
   <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,11647" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Fecha_Inicio" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Downloads\PlantillaSalida_3Hojas.xlsx" Name="Ubicacion_Excel" />
+      <Variable x:TypeArguments="x:String" Name="Ubicacion_Excel">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Desktop\Net\PlantillaSalida_3Hojas.xlsx</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" Name="Ubicacion_Word" />
       <Variable x:TypeArguments="x:String" Name="Planta" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_empresa_subcontratada" />
@@ -122,7 +126,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_1" TimeoutMS="1000">
+            <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_12" TimeoutMS="1000">
               <ui:GetFromClipboard.Result>
                 <OutArgument x:TypeArguments="x:String">[Fecha_Inicio]</OutArgument>
               </ui:GetFromClipboard.Result>
