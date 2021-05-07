@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>466,1937</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>550,2038</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Grabacion_rellenarExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -72,7 +72,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Grabacion_rellenarExcel" sap:VirtualizedContainerService.HintSize="476,1872" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Grabacion_rellenarExcel" sap:VirtualizedContainerService.HintSize="476,1973" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="nombreCelda" />
       <Variable x:TypeArguments="x:String" Name="nombreFichero" />
@@ -82,6 +82,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Empiza GRABACIONRELLENAREXCEL" />
     <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[nombreCelda]</OutArgument>

@@ -3,12 +3,12 @@
     <x:Property Name="ficheros" Type="InArgument(s:String[])" />
     <x:Property Name="indiceficheros" Type="InArgument(x:Int32)" />
     <x:Property Name="celdaExcel1" Type="InOutArgument(x:String)" />
-    <x:Property Name="TablaAGuardar" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="TablaGuardada" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>561,2056</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>550,2320</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainTotal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -73,7 +73,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,1991" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,2255" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="TablaTipoPieza" />
       <Variable x:TypeArguments="sd:DataTable" Name="nueva2" />
@@ -81,18 +81,28 @@
       <Variable x:TypeArguments="x:String" Name="celdaExcel" />
       <Variable x:TypeArguments="s:String[]" Name="variableFiltroArray" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
+      <Variable x:TypeArguments="x:String" Name="textoTablaGuardada" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Empiza MAINTOTAL" />
+    <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="499,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;TablaGuardada en MainTotal &quot; &amp;textoTablaGuardada]" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Maintotal &quot;&amp; celdaExcel1]" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="crear tabla sin fechas, poniendo en la primera columna el TIPO&#xA; y rellena las celdas vacía con 0" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="499,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\FuncionTablaFiltradaTipoPieza - Copiar (1).xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva2">[nueva2]</OutArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">[indiceficheros]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva2">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="nueva2" />
+        </OutArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">
+          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="indiceficheros" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -178,9 +188,9 @@
                   <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">
                     <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="variableFiltroArray" />
                   </InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="TablaAGuardar">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
-                  </OutArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaGuardada" />
+                  </InOutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_5">

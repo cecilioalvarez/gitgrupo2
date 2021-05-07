@@ -4,12 +4,12 @@
     <x:Property Name="variableFiltro" Type="InArgument(x:String)" />
     <x:Property Name="celdaExcel" Type="InArgument(x:String)" />
     <x:Property Name="variableFiltroArray" Type="InArgument(s:String[])" />
-    <x:Property Name="TablaAGuardar" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="TablaGuardada" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>561,1405</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>550,1618</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PruebasTipoPIEZA_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -77,7 +77,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PruebasTipoPIEZA" sap:VirtualizedContainerService.HintSize="478,1188" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PruebasTipoPIEZA" sap:VirtualizedContainerService.HintSize="478,1553" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="textoTablaTipoPieza" />
       <Variable x:TypeArguments="sd:DataTable" Name="TablaAT" />
@@ -111,13 +111,17 @@
       <Variable x:TypeArguments="x:Int32" Name="RTotal" />
       <Variable x:TypeArguments="x:Int32" Name="STotal" />
       <Variable x:TypeArguments="x:Int32" Name="TTotal" />
-      <Variable x:TypeArguments="x:String" Name="textoTablaAGuardar" />
+      <Variable x:TypeArguments="x:String" Name="textoTablaGuardada" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="Empiza MAINTIPOPIEZASAT" />
+    <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;TablaGuardada en MainToPiezaAT &quot; &amp;textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[textoTablaGuardada]" />
     <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtra la tabla para obtener solo la filas con el tipo de pieza especificado en variableFiltro" DataTable="[TablaTipoPieza]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="436,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[TablaAT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -145,108 +149,15 @@
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="Filtrar Tipo ACABADO" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\SumarFilasUnTipoCero - Copiar (1).xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAT">[TablaAT]</InArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">[sumaTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="IOTotal">[IOTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="nachgearTotal">[nachgearTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="BIOTotal">[BIOTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="IOZUTotal">[IOZUTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="NIOTotal">[NIOTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="NIOPorTotal">[NIOPorTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="stundenTotal">[stundenTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="ATotal">[ATotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="BTotal">[BTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="CTotal">[CTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="DTotal">[DTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="ETotal">[ETotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="FTotal">[FTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="GTotal">[GTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="HTotal">[HTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="ITotal">[ITotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="JTotal">[JTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="KTotal">[KTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="LTotal">[LTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="MTotal">[MTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="NTotal">[NTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="OTotal">[OTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="PTotal">[PTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="QTotal">[QTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="RTotal">[RTotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="STotal">[STotal]</OutArgument>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="TTotal">[TTotal]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\CrearTablaAImprimirCEROS - Copiar (1).xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="TablaAImprimir">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAT">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaAT" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="sumaTotal" />
         </OutArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="sumaTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="IOTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IOTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="ATotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ATotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="BTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="BTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="STotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="STotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="CTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="DTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="DTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="ETotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ETotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="FTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="FTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="GTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="GTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="HTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="HTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="ITotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="ITotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="JTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="JTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="KTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="KTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="LTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="LTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="MTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="MTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="NTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="NTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="OTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="OTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="PTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="PTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="QTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="QTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="RTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="RTotal" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="TTotal">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="TTotal" />
-        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="IOTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="IOTotal" />
+        </OutArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="nachgearTotal">
           <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="nachgearTotal" />
         </OutArgument>
@@ -265,23 +176,111 @@
         <OutArgument x:TypeArguments="x:Int32" x:Key="stundenTotal">
           <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="stundenTotal" />
         </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="variableFiltro" />
-        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="ATotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ATotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="BTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="BTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="CTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="CTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="DTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="DTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="ETotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ETotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="FTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="FTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="GTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="GTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="HTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="HTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="ITotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="ITotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="JTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="JTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="KTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="KTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="LTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="LTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="MTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="MTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="NTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="NTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="OTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="OTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="PTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="PTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="QTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="QTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="RTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="RTotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="STotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="STotal" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="TTotal">
+          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="TTotal" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:OutputDataTable DataTable="[TablaAGuardar]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaAGuardar]" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;MainTipoAT&quot; &amp;textoTablaAGuardar]" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[celdaExcel]" />
-    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\CrearTablaAImprimirCEROS - Copiar (1).xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">[sumaTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="IOTotal">[IOTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="ATotal">[ATotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="BTotal">[BTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="STotal">[STotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="CTotal">[CTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="DTotal">[DTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="ETotal">[ETotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="FTotal">[FTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="GTotal">[GTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="HTotal">[HTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="ITotal">[ITotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="JTotal">[JTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="KTotal">[KTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="LTotal">[LTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="MTotal">[MTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="NTotal">[NTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="OTotal">[OTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="PTotal">[PTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="QTotal">[QTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="RTotal">[RTotal]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="TTotal">[TTotal]</InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="nachgearTotal">[nachgearTotal]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="BIOTotal">[BIOTotal]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="IOZUTotal">[IOZUTotal]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="NIOTotal">[NIOTotal]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="NIOPorTotal">[NIOPorTotal]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="stundenTotal">[stundenTotal]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">[variableFiltro]</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">[TablaGuardada]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable sap2010:Annotation.AnnotationText="Crear tabla de datos interna, con los nombres de columnas&#xA;" DataTable="[TablaAGuardar]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Zusammen&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;A&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;C&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;E&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;F&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;G&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;H&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;J&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;K&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;M&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;P&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Q&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;R&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;S&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;T&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;nachgearbeitet&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.OZu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;porcentaje&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Stunden&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+          <ui:BuildDataTable sap2010:Annotation.AnnotationText="Crear tabla de datos interna, con los nombres de columnas&#xA;" DataTable="[TablaGuardada]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Teile_x0020_Nr.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zusammen&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;A&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;C&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;E&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;F&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;G&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;H&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;J&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;K&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;M&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;P&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Q&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;R&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;S&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;T&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;nachgearbeitet&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.OZu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;porcentage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Stunden&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -291,5 +290,8 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
+    <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;MainTipoAT&quot; &amp;textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[celdaExcel]" />
   </Sequence>
 </Activity>

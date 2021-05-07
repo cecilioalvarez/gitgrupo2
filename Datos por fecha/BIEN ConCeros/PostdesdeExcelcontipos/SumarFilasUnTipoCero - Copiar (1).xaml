@@ -33,7 +33,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>609,1047</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>550,1644</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SumarFilasUnTipo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -96,22 +96,22 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SumarFilasUnTipo" sap:VirtualizedContainerService.HintSize="452,982" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SumarFilasUnTipo" sap:VirtualizedContainerService.HintSize="452,1579" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TablaAT]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="410,890" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="410,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Empiza SUMARFILAS" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TablaAT]" DisplayName="Para cada fila" sap:VirtualizedContainerService.HintSize="410,1386" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="fila" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,770" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,1266" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="3" Name="i" />
             </Sequence.Variables>

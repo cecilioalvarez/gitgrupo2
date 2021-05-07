@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Paso2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="TablaAGuardar" Type="InArgument(sd:DataTable)" />
     <x:Property Name="celdaExcel" Type="InArgument(x:String)" />
     <x:Property Name="variableFiltroArray" Type="InArgument(s:String[])" />
+    <x:Property Name="TablaGuardada" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>560,1404</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>630,2049</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Paso2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -69,29 +69,41 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Paso2" sap:VirtualizedContainerService.HintSize="499,1339" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Paso2" sap:VirtualizedContainerService.HintSize="499,1984" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="variableFiltro" />
       <Variable x:TypeArguments="sd:DataTable" Name="TablaAImprimir" />
       <Variable x:TypeArguments="x:String" Name="celdaExcel" />
-      <Variable x:TypeArguments="x:String" Name="textoTablaAGuardar" />
+      <Variable x:TypeArguments="x:String" Name="textoTablaGuardada" />
+      <Variable x:TypeArguments="sd:DataTable" Name="TablaFinal" />
+      <Variable x:TypeArguments="x:String" Name="textoTablaFinal" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="457,731" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[variableFiltroArray]">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Crear tabla de datos interna, con los nombres de columnas&#xA;" DataTable="[TablaFinal]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="457,116" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Teile_x0020_Nr.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zusammen&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;A&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;C&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;E&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;F&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;G&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;H&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;J&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;K&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;M&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;P&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Q&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;R&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;S&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;T&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;nachgearbeitet&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.OZu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;porcentage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Stunden&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BuildDataTable>
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="457,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="Empiza PASO2" />
+    <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="457,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[textoTablaGuardada]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="457,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[textoTablaGuardada]" />
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="457,956" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[variableFiltroArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="421,597" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="421,822" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="TablaFiltrada" />
               <Variable x:TypeArguments="x:Int32" Name="sumaTotal" />
@@ -123,7 +135,7 @@
               <Variable x:TypeArguments="x:Int32" Name="RTotal" />
               <Variable x:TypeArguments="x:Int32" Name="STotal" />
               <Variable x:TypeArguments="x:Int32" Name="TTotal" />
-              <Variable x:TypeArguments="sd:DataTable" Name="TablaAGuardar" />
+              <Variable x:TypeArguments="x:String" Name="textoTablaFiltrada" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -138,7 +150,7 @@
                 <InArgument x:TypeArguments="x:String">[item]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtra la tabla para obtener solo la filas con el tipo de pieza especificado en variableFiltro" DataTable="[TablaAGuardar]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="379,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[TablaFiltrada]" SelectColumnsMode="Keep">
+            <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtra la tabla para obtener solo la filas con el tipo de pieza especificado en variableFiltro" DataTable="[TablaGuardada]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="379,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[TablaFiltrada]" SelectColumnsMode="Keep">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                   <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -162,6 +174,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FilterDataTable>
+            <ui:OutputDataTable DataTable="[TablaFiltrada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[textoTablaFiltrada]" />
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[textoTablaFiltrada]" />
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\SumarFilasUnTipoCero - Copiar (1).xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAT">
@@ -255,9 +269,6 @@
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\CrearTablaAImprimirCEROS - Copiar (1).xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="TablaAImprimir">
-                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
-                </OutArgument>
                 <InArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">
                   <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="sumaTotal" />
                 </InArgument>
@@ -345,14 +356,18 @@
                 <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="variableFiltro" />
                 </InArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">
+                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaGuardada" />
+                </InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
+            <ui:MergeDataTable Destination="[TablaFinal]" DisplayName="Fusionar tabla de datos" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[TablaGuardada]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:OutputDataTable DataTable="[TablaAGuardar]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="457,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textoTablaAGuardar]" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="457,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[textoTablaAGuardar]" />
+    <ui:OutputDataTable DataTable="[TablaFinal]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="457,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[textoTablaFinal]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="457,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[textoTablaFinal]" />
     <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="457,313" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="421,235" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -363,15 +378,9 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Escribir en el Excel" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\solo un tipo\EscribirEnExcel - Copiar (1).xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="variableFiltroArray" />
-              </InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaImprimir">
-                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaAGuardar" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="celdaExcel3">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="variableFiltro">[variableFiltroArray]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaImprimir">[TablaGuardada]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="celdaExcel3">[celdaExcel]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
