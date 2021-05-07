@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1027,2824</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1151,2824</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sobreescribir_plantilla_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -100,7 +100,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:ExcelWriteRange AddHeaders="True" DataTable="[tablatotal]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="A26" />
             <ui:OutputDataTable DataTable="[tablatotal]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textotabla]" />
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[tabla2]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet2" StartingCell="A32" />
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[tabla2]" DisplayName="Escribir rango" sap:VirtualizedContainerService.HintSize="436,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet2" StartingCell="A31" />
             <ui:OutputDataTable DataTable="[tabla2]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textotabla2]" />
             <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,231" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
