@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,6961" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,10381" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -71,7 +71,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,6896" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,10316" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Fecha_Inicio" />
       <Variable x:TypeArguments="x:String" Name="Ubicacion_Excel">
@@ -104,13 +104,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,3837" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,4502" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,3728" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,4393" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -272,17 +272,24 @@
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_11" Text="// Total A&#xA;" />
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_12" Text="// Total B&#xA;" />
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_13" Text="// Total C" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_49" Text="// Zusammen&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_50" Text="// Nachgearbeitet&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_51" Text="// B.I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_52" Text="// I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_53" Text="// N.I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_54" Text="// N.I.O.(%)&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_55" Text="// Geleistete Stunden&#xA;" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="510,2927" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="510,5682" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="476,2818" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="476,5573" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -449,6 +456,35 @@
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_18" Text="// Empresa Cliente&#xA;" />
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_19" Text="// Responsable de Empresa Cliente&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_20" Text="// Actividad" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_21" Text="// Responsable de calidad" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_22" Text="// Total A&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_23" Text="// Total B&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_24" Text="// Total C" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_25" Text="// Total D&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_26" Text="// Total E&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_27" Text="// Total F&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_28" Text="// Total G&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_29" Text="// Total H&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_30" Text="// Total I&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_31" Text="// Total J&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_32" Text="// Total K&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_33" Text="// Total L&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_34" Text="// Total M&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_35" Text="// Total N&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_36" Text="// Total O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_37" Text="// Total P&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_38" Text="// Total Q&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_39" Text="// Total R&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_40" Text="// Total S&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_41" Text="// Total T&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_42" Text="// Zusammen&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_43" Text="// Nachgearbeitet&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_44" Text="// B.I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_45" Text="// I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_46" Text="// N.I.O&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_47" Text="// N.I.O.(%)&#xA;" />
+            <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_48" Text="// Geleistete Stunden&#xA;" />
             <p:WordExportToPdf DisplayName="Guardar documento como PDF" FilePath="C:\Users\alumnogti\Desktop\Net\Plantillaprueba.pdf" sap:VirtualizedContainerService.HintSize="434,109" sap2010:WorkflowViewState.IdRef="WordExportToPdf_1" />
           </Sequence>
         </ActivityAction>
