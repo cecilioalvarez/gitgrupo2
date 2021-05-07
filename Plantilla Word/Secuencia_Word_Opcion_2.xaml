@@ -139,7 +139,7 @@
             <ui:ExcelSelectRange DisplayName="Seleccionar rango" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_1" Range="B38" SheetName="Sheet1" />
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'B38'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_15" Key="c" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="364c69c9-4b2d-46b9-b206-3d3a97b0b5fc" InformativeScreenshot="a506daa1f2016e431eeb87cd5d89f52c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida_3Hojas - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida_3Hojas' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='B38' tableCol='1' tableRow='16' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="364c69c9-4b2d-46b9-b206-3d3a97b0b5fc" InformativeScreenshot="a506daa1f2016e431eeb87cd5d89f52c" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida_3Hojas - Excel' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalida_3Hojas' /&gt;&lt;uia name='Cuadrícula' /&gt;&lt;uia name='B38' tableCol='1' tableRow='25' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -2379,7 +2379,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="[N_I_O]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="[N_I_O.Trim]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1ed4aed7-2281-43ee-a705-dfe86a434653">
                   <ui:Target.TimeoutMS>
@@ -2404,7 +2404,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_36" Text="[N_I_O_P]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_36" Text="[N_I_O_P.Trim]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1ed4aed7-2281-43ee-a705-dfe86a434653">
                   <ui:Target.TimeoutMS>
