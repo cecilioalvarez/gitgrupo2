@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,10947" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,11264" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -68,7 +68,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -76,19 +75,11 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,10882" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,11199" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Fecha_Inicio" />
-      <Variable x:TypeArguments="x:String" Name="Ubicacion_Excel">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Downloads\PlantillaSalida_3Hojas.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Ubicacion_Word">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">C:\Users\alumnogti\Desktop\Net\Plantilla.docx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Downloads\PlantillaSalida_3Hojas.xlsx" Name="Ubicacion_Excel" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" Name="Ubicacion_Word" />
       <Variable x:TypeArguments="x:String" Name="Planta" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_empresa_subcontratada" />
       <Variable x:TypeArguments="x:String" Name="Empresa_Subcontratada" />
@@ -97,11 +88,7 @@
       <Variable x:TypeArguments="x:String" Name="Actividad" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_calidad" />
       <Variable x:TypeArguments="x:Int32" Name="ivt" />
-      <Variable x:TypeArguments="x:Int32" Name="iv">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="iv" />
       <Variable x:TypeArguments="x:String" Name="Fecha_Final" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -109,13 +96,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,4502" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,4819" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,4393" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,4710" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -274,6 +261,24 @@
               </ui:GetFromClipboard.Result>
             </ui:GetFromClipboard>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_10" Text="// Responsable de calidad" />
+            <ui:ExcelSelectRange DisplayName="Seleccionar rango" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_9" Range="E11" SheetName="Sheet1" />
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="c" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="20b588c7-2a63-4f93-a78c-df6accbfedcb">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:GetFromClipboard DisplayName="Obtener a partir del portapapeles" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetFromClipboard_11" TimeoutMS="1000">
+              <ui:GetFromClipboard.Result>
+                <OutArgument x:TypeArguments="x:String">[Actividad]</OutArgument>
+              </ui:GetFromClipboard.Result>
+            </ui:GetFromClipboard>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_11" Text="// Total A&#xA;" />
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_12" Text="// Total B&#xA;" />
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_13" Text="// Total C" />
