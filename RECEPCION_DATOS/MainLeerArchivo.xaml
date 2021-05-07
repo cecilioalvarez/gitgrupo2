@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="980,1858" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LeerMensajeOutlook" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,2170" sap2010:WorkflowViewState.IdRef="LeerMensajeOutlook_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
@@ -69,7 +69,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LeerMensajeOutlook" sap:VirtualizedContainerService.HintSize="604,1793" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LeerMensajeOutlook" sap:VirtualizedContainerService.HintSize="604,2105" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="ListaMensaje" />
       <Variable x:TypeArguments="x:String" Name="Email" />
@@ -78,21 +78,20 @@
       <Variable x:TypeArguments="x:String" Name="RutaCarpeta" />
       <Variable x:TypeArguments="s:String[]" Name="Ficheros" />
       <Variable x:TypeArguments="x:String" Name="Outlook" />
-      <Variable x:TypeArguments="x:String" Default="[RutaCarpeta]" Name="URLcarpeta" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cuenta_Outlook" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
-      <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String">[Outlook]</OutArgument>
-      </ui:GetRobotAsset.Value>
-    </ui:GetRobotAsset>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Email_Hollen" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Email_Calidad" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[Email]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cuenta_Outlook" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[Outlook]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Guardar_Archivos" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="562,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
@@ -107,6 +106,30 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetOutlookMailMessages>
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="562,272" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,194" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap2010:Annotation.AnnotationText="Guardar en una variable el email del usuario que quieres filtrar los mensajes" DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,102" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Email]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">lopezzmario32@gmail.com</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Recorre la bandeja de mensajes del Outlook" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="562,644" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ListaMensaje]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
