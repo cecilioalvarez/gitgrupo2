@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1074,39251" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="606,39251" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -179,6 +179,68 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:Int32" Name="nv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="ov">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="pv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="qv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="rv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="sv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="tv" />
+      <Variable x:TypeArguments="x:Int32" Name="uv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="vv" />
+      <Variable x:TypeArguments="x:Int32" Name="wv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="xv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="yv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="zv">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="aav">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="bav">
         <Variable.Default>
           <Literal x:TypeArguments="x:Int32" />
         </Variable.Default>
@@ -1018,7 +1080,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="av&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="av&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_28" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en 'elemento  Celda de tabla'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[Empresa_Subcontratada.Trim]">
@@ -1090,7 +1152,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="bv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="bv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_29" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[Empresa_Cliente.Trim]">
@@ -1162,7 +1224,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_30" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[Actividad.Trim]">
@@ -1234,7 +1296,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dv&lt;9" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dv&lt;9" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_31" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_11" Text="[A.Trim]">
@@ -1281,7 +1343,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ev&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ev&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_32" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_12" Text="[K.Trim]">
@@ -1328,7 +1390,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="fv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="fv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_33" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_13" Text="[B.Trim]">
@@ -1375,7 +1437,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="gv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="gv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_34" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_14" Text="[L.Trim]">
@@ -1422,7 +1484,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="hv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="hv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_35" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[C.Trim]">
@@ -1469,7 +1531,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="jv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="jv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_36" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_16" Text="[M.Trim]">
@@ -1516,7 +1578,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="kv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="kv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_37" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_17" Text="[D.Trim]">
@@ -1563,7 +1625,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="lv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="lv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_38" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_18" Text="[N.Trim]">
@@ -1610,7 +1672,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="mv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="mv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_39" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_19" Text="[E.Trim]">
@@ -1657,7 +1719,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="nv&lt;3" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="nv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_40" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[O.Trim]">
@@ -1695,16 +1757,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[ov]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[ov+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_14" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ov&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_21" Text="[F.Trim]">
@@ -1742,16 +1804,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[pv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[pv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_15" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="pv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_22" Text="[P.Trim]">
@@ -1789,16 +1851,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[qv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[qv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_16" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="qv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_23" Text="[G.Trim]">
@@ -1836,16 +1898,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[rv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[rv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_17" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="rv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[Q.Trim]">
@@ -1883,16 +1945,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[sv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[sv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_18" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="sv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_25" Text="[H.Trim]">
@@ -1930,16 +1992,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[tv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[tv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_19" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="tv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_26" Text="[R.Trim]">
@@ -1977,16 +2039,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[uv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[uv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_20" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="uv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_27" Text="[I.Trim]">
@@ -2005,6 +2067,9 @@
             <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_21">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="variable1" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2024,16 +2089,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[vv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[vv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_21" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="vv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_28" Text="[S.Trim]">
@@ -2071,16 +2136,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[wv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[wv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_22" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="wv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_29" Text="[J.Trim]">
@@ -2118,16 +2183,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[xv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[xv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_23" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="xv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_30" Text="[T.Trim]">
@@ -2165,16 +2230,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[yv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[yv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_24" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="yv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_31" Text="[Zusammen.Trim]">
@@ -2237,16 +2302,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[zv]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[zv+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_25" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="zv&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_33" Text="[B_I_O.Trim]">
@@ -2309,16 +2374,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[aav]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[aav+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_26" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="aav&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="[N_I_O.Trim]">
@@ -2381,16 +2446,16 @@
                   </ui:SendHotkey>
                   <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iv]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int32">[bav]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">[iv+1]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32">[bav+1]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="iv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_27" />
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="bav&lt;3" />
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_37" Text="[Geleistete_Stunden.Trim]">
