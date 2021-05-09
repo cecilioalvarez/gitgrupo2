@@ -98,11 +98,17 @@
       <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="499,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textoTablaGuardada]" />
       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;TablaGuardada en MainTotal &quot; &amp;textoTablaGuardada]" />
       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Maintotal &quot;&amp; celdaExcel1]" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="crear tabla sin fechas, poniendo en la primera columna el TIPO&#xA; y rellena las celdas vacía con 0" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="499,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\FuncionTablaFiltradaTipoPieza - Copiar (1).xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="crear tabla sin fechas, poniendo en la primera columna el TIPO&#xA; y rellena las celdas vacía con 0" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="499,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\TablaFIltradaTipoPieza.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva2">[nueva2]</OutArgument>
-          <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">[indiceficheros]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="nueva2">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="nueva2" />
+          </OutArgument>
+          <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">
+            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="indiceficheros" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
