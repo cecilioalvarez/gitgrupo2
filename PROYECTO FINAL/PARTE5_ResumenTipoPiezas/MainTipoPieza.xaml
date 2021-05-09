@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>596,1710</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>596,1384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Secuencia_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,13 +72,13 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="520,1645" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="463,1319" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="MainTipoPieza" sap:VirtualizedContainerService.HintSize="478,1553" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="MainTipoPieza" sap:VirtualizedContainerService.HintSize="421,1227" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="textoTablaTipoPieza" />
         <Variable x:TypeArguments="sd:DataTable" Name="TablaAT" />
@@ -119,11 +119,11 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Empiza MAINTIPOPIEZASAT" />
-      <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textoTablaGuardada]" />
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;TablaGuardada en MainToPiezaAT &quot; &amp;textoTablaGuardada]" />
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[textoTablaGuardada]" />
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtra la tabla para obtener solo la filas con el tipo de pieza especificado en variableFiltro" DataTable="[TablaTipoPieza]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="436,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[TablaAT]" SelectColumnsMode="Keep">
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Empiza MAINTIPOPIEZASAT" />
+      <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[textoTablaGuardada]" />
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;TablaGuardada en MainToPiezaAT &quot; &amp;textoTablaGuardada]" />
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[textoTablaGuardada]" />
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtra la tabla para obtener solo la filas con el tipo de pieza especificado en variableFiltro" DataTable="[TablaTipoPieza]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="379,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[TablaAT]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -147,8 +147,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Filtrar Tipo ACABADO" />
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\SumarFilasUnTipo.xaml">
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Filtrar Tipo ACABADO" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\SumarFilasUnTipo.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaAT">
             <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaAT" />
@@ -239,7 +239,7 @@
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\CrearTablaAImprimirCEROS - Copiar (1).xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\CrearTablaAImprimirCEROS - Copiar (1).xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Int32" x:Key="sumaTotal">[sumaTotal]</InArgument>
           <InArgument x:TypeArguments="x:Int32" x:Key="IOTotal">[IOTotal]</InArgument>
@@ -273,27 +273,9 @@
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">[TablaGuardada]</InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,286" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:BuildDataTable sap2010:Annotation.AnnotationText="Crear tabla de datos interna, con los nombres de columnas&#xA;" DataTable="[TablaGuardada]" DisplayName="Crear tabla de datos" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Teile_x0020_Nr.&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zusammen&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;A&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;C&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;D&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;E&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;F&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;G&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;H&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;J&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;K&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;L&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;M&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;P&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Q&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;R&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;S&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;T&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;nachgearbeitet&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;B.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;I.OZu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;N.I.O&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;porcentage&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Stunden&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:BuildDataTable>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaGuardada]" />
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;MainTipoAT&quot; &amp;textoTablaGuardada]" />
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[celdaExcel]" />
+      <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaGuardada]" />
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;MainTipoAT&quot; &amp;textoTablaGuardada]" />
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[celdaExcel]" />
     </Sequence>
   </Sequence>
 </Activity>
