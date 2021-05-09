@@ -51,6 +51,15 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="541,1788" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -130,12 +139,20 @@
                 <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;&quot; &amp; ficheros(0)]" />
               </Sequence>
               <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="379,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;MinLecturaFich: &quot;&amp; celdaExcel0]" />
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\MainTotal.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\MainTotal.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">[indiceficheros]</InArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="celdaExcel1">[celdaExcel0]</InOutArgument>
-                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">[TablaGuardada]</InOutArgument>
+                  <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
+                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="indiceficheros">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="indiceficheros" />
+                  </InArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="celdaExcel1">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="celdaExcel0" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="TablaGuardada" />
+                  </InOutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -150,11 +167,17 @@
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="457,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Datos por fecha\BIEN ConCeros\PostdesdeExcelcontipos\Paso2.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="457,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\ResultadoFinal.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="celdaExcel">[celdaExcel0]</InArgument>
-          <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">[variableFiltroArray]</InArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">[TablaGuardada]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="celdaExcel">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="celdaExcel0" />
+          </InArgument>
+          <InArgument x:TypeArguments="s:String[]" x:Key="variableFiltroArray">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="variableFiltroArray" />
+          </InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="TablaGuardada">
+            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TablaGuardada" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
