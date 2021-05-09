@@ -22,19 +22,19 @@
     <x:Property Name="QTotal" Type="InArgument(x:Int32)" />
     <x:Property Name="RTotal" Type="InArgument(x:Int32)" />
     <x:Property Name="TTotal" Type="InArgument(x:Int32)" />
-    <x:Property Name="nachgearTotal" Type="OutArgument(x:Int32)" />
-    <x:Property Name="BIOTotal" Type="OutArgument(x:Int32)" />
-    <x:Property Name="IOZUTotal" Type="OutArgument(x:Int32)" />
-    <x:Property Name="NIOTotal" Type="OutArgument(x:Int32)" />
-    <x:Property Name="NIOPorTotal" Type="OutArgument(x:Int32)" />
-    <x:Property Name="stundenTotal" Type="OutArgument(x:Int32)" />
+    <x:Property Name="nachgearTotal" Type="InArgument(x:Int32)" />
+    <x:Property Name="BIOTotal" Type="InArgument(x:Int32)" />
+    <x:Property Name="IOZUTotal" Type="InArgument(x:Int32)" />
+    <x:Property Name="NIOTotal" Type="InArgument(x:Int32)" />
+    <x:Property Name="NIOPorTotal" Type="InArgument(x:Double)" />
+    <x:Property Name="stundenTotal" Type="InArgument(x:Double)" />
     <x:Property Name="variableFiltro" Type="InArgument(x:String)" />
     <x:Property Name="TablaGuardada" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>550,1813</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>694,1782</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CrearTablaAImprimir_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -67,7 +67,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -94,9 +94,10 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CrearTablaAImprimir" sap:VirtualizedContainerService.HintSize="376,1748" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CrearTablaAImprimir" sap:VirtualizedContainerService.HintSize="376,1717" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow" Name="FilaNueva" />
       <Variable x:TypeArguments="x:String" Name="textoTablaAImprimir" />
@@ -118,7 +119,7 @@
         <InArgument x:TypeArguments="sd:DataRow">[TablaGuardada.NewRow]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,966" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,935" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
@@ -329,20 +330,12 @@
               <InArgument x:TypeArguments="x:Object">[NIOTotal]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:Object">[FilaNueva("porcentage")]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:Object">[NIOPorTotal]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Object">[FilaNueva("Stunden")]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Object">[stundenTotal]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">

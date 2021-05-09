@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>550,2320</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>552,2050</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MainTotal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -73,7 +73,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,2255" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MainTotal" sap:VirtualizedContainerService.HintSize="541,1985" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="TablaTipoPieza" />
       <Variable x:TypeArguments="sd:DataTable" Name="nueva2" />
@@ -128,25 +128,6 @@
     </Assign>
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[variableFiltroArray(0)]" />
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="499,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Maintotal &quot;&amp; celdaExcel1]" />
-    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="499,230" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[celdaExcel1]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">31</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
     <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Para cada" sap:VirtualizedContainerService.HintSize="499,932" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[variableFiltroArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
