@@ -34,7 +34,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>694,1782</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>629,1883</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CrearTablaAImprimir_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -94,10 +94,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CrearTablaAImprimir" sap:VirtualizedContainerService.HintSize="376,1717" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CrearTablaAImprimir" sap:VirtualizedContainerService.HintSize="376,1818" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow" Name="FilaNueva" />
       <Variable x:TypeArguments="x:String" Name="textoTablaAImprimir" />
@@ -110,7 +109,8 @@
     </sap:WorkflowViewStateService.ViewState>
     <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="Empiza CREARTABLAIMPRIMIR" />
     <ui:OutputDataTable DataTable="[TablaGuardada]" DisplayName="Tabla de datos de salida" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[textoTablaGuardada]" />
-    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[textoTablaAImprimir]" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="************************AQUI*************" />
+    <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[textoTablaGuardada]" />
     <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataRow">[FilaNueva]</OutArgument>
