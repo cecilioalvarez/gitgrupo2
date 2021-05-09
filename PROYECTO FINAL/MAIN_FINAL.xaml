@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Activity mc:Ignorable="sap sap2010" x:Class="MAIN_FINAL" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="704,515" sap2010:WorkflowViewState.IdRef="MAIN_FINAL_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="MAIN_FINAL" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="714,515" sap2010:WorkflowViewState.IdRef="MAIN_FINAL_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -54,7 +53,6 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Secuencia MAIN para meter todas las partes de cada uno: 1)Recepción Archivos de email (Mario)&#xA;2) Lectura e iteración de número de archivos (Bidane)&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)" DisplayName="MAIN_FINAL" sap:VirtualizedContainerService.HintSize="421,438" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -67,11 +65,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 2:&#xD;&#xA;Hay que meterle como argumento la URL de la carpeta donde se guardan los ficheros&#xD;&#xA;en la funcion interna de iteración de archivos: hay que meter en los casos : cantidadficheros&gt;=cantidad_necesaria e iteracion=3: la función para que comience todo el proceso: empezano desde parte3" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,229" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE2_IteracionNumeroFicheros\LeerFicheros.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 2:&#xA;Hay que meterle como argumento la URL de la carpeta donde se guardan los ficheros&#xA;en la funcion interna de iteración de archivos: hay que meter en los casos : cantidadficheros&gt;=cantidad_necesaria e iteracion=3,  la función para que comience todo el proceso: empezando desde parte3" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,229" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE2_IteracionNumeroFicheros\LeerFicheros.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="URLcarpeta">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="URLcarpeta" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URLcarpeta">[URLcarpeta]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
