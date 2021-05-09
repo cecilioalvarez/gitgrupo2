@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="LeerFicheros" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="URLcarpeta" Type="InArgument(x:String)" />
@@ -108,7 +109,7 @@
           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(URLcarpeta)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\IteracionNumeroFicheros\IteracionFicheros.xaml">
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE2_IteracionNumeroFicheros\IteracionFicheros.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
             <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
