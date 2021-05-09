@@ -56,7 +56,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Secuencia MAIN para meter todas las partes de cada uno: 1)Recepción Archivos de email (Mario)&#xA;2) Lectura e iteración de número de archivos (Bidane)&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)" DisplayName="MAIN_FINAL" sap:VirtualizedContainerService.HintSize="421,378" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Secuencia MAIN para meter todas las partes de cada uno: 1)Recepción Archivos de email (Mario)&#xA;2) Lectura e iteración de número de archivos (Bidane)&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)" DisplayName="MAIN_FINAL" sap:VirtualizedContainerService.HintSize="421,438" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="URLcarpeta" />
     </Sequence.Variables>
@@ -66,7 +66,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 2:&#xD;&#xA;Hay que meterle como argumento la URL de la carpeta donde se guardan los ficheros" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,169" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\IteracionNumeroFicheros\LeerFicheros.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 2:&#xD;&#xA;Hay que meterle como argumento la URL de la carpeta donde se guardan los ficheros&#xD;&#xA;en la funcion interna de iteración de archivos: hay que meter en los casos : cantidadficheros&gt;=cantidad_necesaria e iteracion=3: la función para que comience todo el proceso: empezano desde parte3" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,229" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\IteracionNumeroFicheros\LeerFicheros.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="URLcarpeta">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="URLcarpeta" />
