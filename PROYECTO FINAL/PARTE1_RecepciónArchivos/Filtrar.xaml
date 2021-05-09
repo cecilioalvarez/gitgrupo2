@@ -68,7 +68,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Filtrar" sap:VirtualizedContainerService.HintSize="915,3231" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -282,14 +281,10 @@
               </Sequence>
             </ui:CommentOut.Body>
           </ui:CommentOut>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="EnviarCorreos_Bueno.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE1_RecepciónArchivos\EnviarCorreos.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="Asunto">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="asunto" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="Cuerpo">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="texto" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Asunto">[asunto]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Cuerpo">[texto]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
