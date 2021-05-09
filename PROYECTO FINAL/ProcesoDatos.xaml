@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>643,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>606,515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcesoDatos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,10 +59,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Hay que meter aquí el codigo de las partes:&#xD;&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)" DisplayName="ProcesoDatos" sap:VirtualizedContainerService.HintSize="200,215" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Hay que meter aquí el codigo de las partes:&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)&#xD;&#xA;&#xD;&#xA;Los ficheros ya están leidos fuera, asi que se meterán en variable tipo String[] como argumentos" DisplayName="ProcesoDatos" sap:VirtualizedContainerService.HintSize="200,290" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
