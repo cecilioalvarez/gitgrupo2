@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>489,2282</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>596,2282</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Paso2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
@@ -76,7 +76,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Paso2" sap:VirtualizedContainerService.HintSize="499,2217" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ResultadoFinal" sap:VirtualizedContainerService.HintSize="499,2217" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="variableFiltro" />
       <Variable x:TypeArguments="sd:DataTable" Name="TablaAImprimir" />
