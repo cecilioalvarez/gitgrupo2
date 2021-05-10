@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1558,2932</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1227,2307</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>IteracionFicheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,15 +69,19 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IteracionFicheros" sap:VirtualizedContainerService.HintSize="1568,2867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IteracionFicheros" sap:VirtualizedContainerService.HintSize="1339,2243" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="emailCalidad" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Iteracion" sap:VirtualizedContainerService.HintSize="1526,2775" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Iteracion" sap:VirtualizedContainerService.HintSize="1297,2151" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="cantidadficheros" />
         <Variable x:TypeArguments="x:Int32" Name="cantidad_necesaria" />
@@ -88,7 +92,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1255,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[cantidadficheros]</OutArgument>
         </Assign.To>
@@ -96,83 +100,59 @@
           <InArgument x:TypeArguments="x:Int32">[ficheros.Length]</InArgument>
         </Assign.Value>
       </Assign>
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="1484,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[cantidadficheros.ToString]" />
-      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="1484,230" sap2010:WorkflowViewState.IdRef="CommentOut_11">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_18">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">[cantidad_necesaria]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">3</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cantidad_Archivos" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="1255,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[cantidadficheros.ToString]" />
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cantidad_Archivos" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1255,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:Int32">[cantidad_necesaria]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Email_Calidad" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1255,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[emailCalidad]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1255,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:Int32">[iteracion]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <If Condition="[cantidadficheros&gt;=cantidad_necesaria]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1484,1858" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[cantidadficheros&gt;=cantidad_necesaria]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1255,1327" sap2010:WorkflowViewState.IdRef="If_3">
         <If.Then>
-          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="421,305" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;iteracion= &quot; &amp; iteracion]" />
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\ProcesoDatos.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </If.Then>
-        <If.Else>
-          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1018,1700" sap2010:WorkflowViewState.IdRef="Sequence_16">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="emailCalidad" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="976,230" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;iteracion0= &quot; &amp; iteracion]" />
+            <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="MANDA LA FUNCION " />
+            <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,282" sap2010:WorkflowViewState.IdRef="CommentOut_15">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int32">[iteracion]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Int32">3</InArgument>
-                    </Assign.Value>
-                  </Assign>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\ProcesoDatos.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <If Condition="[iteracion=1]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="976,1338" sap2010:WorkflowViewState.IdRef="If_2">
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1010,1169" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[iteracion=0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="968,1077" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
@@ -182,12 +162,12 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;iteracion1= &quot; &amp; iteracion]" />
-                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Correos" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[False]" />
-                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[2]" />
+                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Condicion_Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[False]" />
+                  <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[1]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <If Condition="[iteracion=2]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="731,1180" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[iteracion=1]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="723,919" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,87 +182,55 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;iteracion2= &quot; &amp; iteracion]" />
-                      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Email_Calidad" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
-                        <ui:GetRobotAsset.Value>
-                          <OutArgument x:TypeArguments="x:String">[emailCalidad]</OutArgument>
-                        </ui:GetRobotAsset.Value>
-                      </ui:GetRobotAsset>
-                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“No se han encontrado el suficiente número de archivos. Necesaria acción manual para el envío de los archivo de Calidad necesarios. La acción de lectura se reintentará en 2 días.&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="444,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: ERROR en integración de datos.”]" To="[emailCalidad]">
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[&quot;iteracion2= &quot; &amp; iteracion]" />
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“No se han encontrado el suficiente número de archivos. Necesaria acción manual para el envío de los archivo de Calidad necesarios. La acción de lectura se reintentará en 2 días.&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: ERROR en integración de datos.”]" To="[emailCalidad]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendOutlookMail.Files>
                       </ui:SendOutlookMail>
-                      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="444,315" sap2010:WorkflowViewState.IdRef="CommentOut_13">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“No se han encontrado el suficiente número de archivos. Necesaria acción manual para el envío de los archivo de Calidad necesarios. La acción de lectura se reintentará en 2 días.&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: ERROR en integración de datos.”]" To="bidasu@hotmail.com">
-                              <ui:SendOutlookMail.Files>
-                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                              </ui:SendOutlookMail.Files>
-                            </ui:SendOutlookMail>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                      </ui:CommentOut>
-                      <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Correos" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="444,132" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[False]" />
-                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="444,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Condicion_Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[False]" />
+                      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[iteracion]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">3</InArgument>
+                          <InArgument x:TypeArguments="x:Int32">2</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="444,132" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[3]" />
+                      <ui:SetAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Establecer activo" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[iteracion]" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="486,1022" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="478,761" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;iteracion3= &quot; &amp; iteracion]" />
-                      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Email_Calidad" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="444,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
-                        <ui:GetRobotAsset.Value>
-                          <OutArgument x:TypeArguments="x:String">[emailCalidad]</OutArgument>
-                        </ui:GetRobotAsset.Value>
-                      </ui:GetRobotAsset>
-                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“No se han encontrado el suficiente número de archivos. Necesaria acción manual para el envío de los archivo de Calidad necesarios. La acción de lectura se reintentará en 2 días.&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="444,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: ERROR en integración de datos.”]" To="[emailCalidad]">
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;iteracion3= &quot; &amp; iteracion]" />
+                      <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“No se han encontrado el suficiente número de archivos. Necesaria acción manual para el envío de los archivo de Calidad necesarios. La acción de lectura se reintentará en 2 días.&quot;]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="436,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: ERROR en integración de datos.”]" To="[emailCalidad]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                         </ui:SendOutlookMail.Files>
                       </ui:SendOutlookMail>
-                      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="444,315" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="MANDA LA FUNCION " />
+                      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="436,282" sap2010:WorkflowViewState.IdRef="CommentOut_16">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,237" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                          <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_23">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[“Se ha continuado con el proceso de integración de datos, aún sin tener el mínimo número de archivos en carpeta.”]" DisplayName="Enviar mensaje de correo de Outlook" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_4" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[&quot;Mensaje Automatizado UiPath: Error en recepción de datos.”]" To="bidasu@hotmail.com">
-                              <ui:SendOutlookMail.Files>
-                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-                              </ui:SendOutlookMail.Files>
-                            </ui:SendOutlookMail>
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PROYECTO FINAL\ProcesoDatos.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="444,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PROYECTO FINAL\ProcesoDatos.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
-                            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
-                          </InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
                     </Sequence>
                   </If.Else>
                 </If>
