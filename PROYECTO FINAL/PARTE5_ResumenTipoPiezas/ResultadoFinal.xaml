@@ -3,11 +3,12 @@
     <x:Property Name="celdaExcel" Type="InArgument(x:String)" />
     <x:Property Name="variableFiltroArray" Type="InArgument(s:String[])" />
     <x:Property Name="TablaGuardada" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="URLCarpetaSalida" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>596,2374</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>649,2374</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Secuencia_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -264,7 +265,7 @@
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="457,615" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\bidas\OneDrive\Desktop\archivos Gestamp\PRUEBAS\PlantillaSalidaFINAL.xlsx">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="457,615" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[URLCarpetaSalida]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
