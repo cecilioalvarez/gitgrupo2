@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1337,2932</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1558,2932</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>IteracionFicheros_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,16 +69,15 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="IteracionFicheros" sap:VirtualizedContainerService.HintSize="1347,2867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="IteracionFicheros" sap:VirtualizedContainerService.HintSize="1568,2867" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Iteracion" sap:VirtualizedContainerService.HintSize="1305,2775" sap2010:WorkflowViewState.IdRef="Sequence_17">
+    <Sequence DisplayName="Iteracion" sap:VirtualizedContainerService.HintSize="1526,2775" sap2010:WorkflowViewState.IdRef="Sequence_17">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="cantidadficheros" />
         <Variable x:TypeArguments="x:Int32" Name="cantidad_necesaria" />
@@ -89,7 +88,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1263,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="1484,60" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[cantidadficheros]</OutArgument>
         </Assign.To>
@@ -97,8 +96,8 @@
           <InArgument x:TypeArguments="x:Int32">[ficheros.Length]</InArgument>
         </Assign.Value>
       </Assign>
-      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="1263,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[cantidadficheros.ToString]" />
-      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="1263,230" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+      <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="1484,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[cantidadficheros.ToString]" />
+      <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="1484,230" sap2010:WorkflowViewState.IdRef="CommentOut_11">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_18">
             <sap:WorkflowViewStateService.ViewState>
@@ -117,22 +116,22 @@
           </Sequence>
         </ui:CommentOut.Body>
       </ui:CommentOut>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cantidad_archivos" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1263,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Cantidad_Archivos" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:Int32">[cantidad_necesaria]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1263,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Iteracion" DisplayName="Obtener activo" sap:VirtualizedContainerService.HintSize="1484,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:Int32">[iteracion]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <If Condition="[cantidadficheros&gt;=cantidad_necesaria]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1263,1858" sap2010:WorkflowViewState.IdRef="If_3">
+      <If Condition="[cantidadficheros&gt;=cantidad_necesaria]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1484,1858" sap2010:WorkflowViewState.IdRef="If_3">
         <If.Then>
-          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="421,305" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
