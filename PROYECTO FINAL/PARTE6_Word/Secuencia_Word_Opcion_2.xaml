@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1074,46394" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="649,46394" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -68,7 +68,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -145,22 +144,9 @@
       <Variable x:TypeArguments="x:Int32" Default="0" Name="zv" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="aav" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="bav" />
-      <Variable x:TypeArguments="x:Int32" Name="cav">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="dav">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="eav">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="a" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="cav" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="dav" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="eav" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2522,7 +2508,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="412,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_28">
+            <ui:InterruptibleWhile Condition="[cav&lt;2]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="412,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_28">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2552,9 +2538,6 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="cav&lt;2" />
-              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="412,116" sap2010:WorkflowViewState.IdRef="SendHotkey_181" Key="enter" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
@@ -2784,7 +2767,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_29">
+            <ui:InterruptibleWhile Condition="[dav&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_29">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_37">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2814,9 +2797,6 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="dav&lt;3" />
-              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Clic 'Elemento de menú  Pegar'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
@@ -2840,7 +2820,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_30">
+            <ui:InterruptibleWhile Condition="[eav&lt;2]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_30">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_38">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2870,9 +2850,6 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="eav&lt;2" />
-              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="SendHotkey_190" Key="enter" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
