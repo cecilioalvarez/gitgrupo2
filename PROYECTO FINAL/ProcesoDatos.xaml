@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>649,1005</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>885,1005</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcesoDatos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -68,9 +68,10 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Hay que meter aquí el codigo de las partes:&#xA;3) Resumen total (Gorka)&#xA;4) Resumen fechas (Gorka)&#xA;5) Resumen tipo piezas (Bidane)&#xA;6) Creacción archivos word/pdf (Sergio)&#xA;&#xA;ARGUMENTOS: &quot;ficheros&quot; (String[]) , &quot;Email_Calidad&quot; (String), &quot;URLCarpetaEntrada&quot; (String),  &quot;URLCarpetaSalida&quot; (String)." DisplayName="ProcesoDatos" sap:VirtualizedContainerService.HintSize="421,940" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -80,9 +81,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" WorkflowFileName="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 3-4: Invocar función Main externa de la PARTE3-4 (resumen total + por fechas)" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 3-4: Invocar función Main externa de la PARTE3-4 (resumen total + por fechas)" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE3_4_ResumenTotalFechas\Secuencia.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros1">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URLCarpetaSalidaExcel">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="URLCarpetaSalidaExcel" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -92,12 +98,8 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="PARTE 5: Invocar la función Main externa de la PARTE 5 (resumen tipo piezas): ARGUMENTOS DE ENTRADA YA PUESTOS" DisplayName="Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="379,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PROYECTO FINAL\PARTE5_ResumenTipoPiezas\MainFicheros.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ficheros" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="URLCarpetaSalida">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="URLCarpetaSalidaExcel" />
-        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="ficheros">[ficheros]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="URLCarpetaSalida">[URLCarpetaSalidaExcel]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
