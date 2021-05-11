@@ -1395,7 +1395,7 @@
                                 <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="797,62" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;hay x FILAS&quot; &amp;numero]" />
                                 <If Condition="[fecha=convert.ToString(fila(0))]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="797,3328" sap2010:WorkflowViewState.IdRef="If_21">
                                   <If.Then>
-                                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1611" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,1642" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1412,7 +1412,7 @@
                                       </Assign>
                                       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[&quot;La A es:&quot; &amp;A1]" />
                                       <WriteLine DisplayName="Escribir línea" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="IGUAL" />
-                                      <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
+                                      <ui:MultipleAssign DisplayName="Asignación múltiple" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_11">
                                         <ui:MultipleAssign.AssignOperations>
                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_234">
@@ -1429,6 +1429,14 @@
                                               </ui:AssignOperation.To>
                                               <ui:AssignOperation.Value>
                                                 <InArgument x:TypeArguments="x:Int32">[Sumageleise+convert.toint32(geleise1)]</InArgument>
+                                              </ui:AssignOperation.Value>
+                                            </ui:AssignOperation>
+                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_236">
+                                              <ui:AssignOperation.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[SumaContainers]</OutArgument>
+                                              </ui:AssignOperation.To>
+                                              <ui:AssignOperation.Value>
+                                                <InArgument x:TypeArguments="x:Int32">[SumaContainers+convert.toint32(containers1)]</InArgument>
                                               </ui:AssignOperation.Value>
                                             </ui:AssignOperation>
                                           </scg:List>
