@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="649,46394" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Secuencia_Word_Opcion_2" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="560,46604" sap2010:WorkflowViewState.IdRef="Secuencia_Word_Opcion_2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -75,11 +75,19 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="552,46329" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia_Word_Opcion_2" sap:VirtualizedContainerService.HintSize="554,46539" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Fecha_Inicio" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Desktop\Net\PlantillaSalidaFINAL_eninglés" Name="Ubicacion_Excel" />
-      <Variable x:TypeArguments="x:String" Default="C:\Users\alumnogti\Desktop\Net\Plantilla.docx" Name="Ubicacion_Word" />
+      <Variable x:TypeArguments="x:String" Name="Ubicacion_Excel">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\bidas\Dropbox\Curso RPA EOI Gestamp\RPA\07_Proyectos\Proyecto Gestamp Calidad\PlantillaSalidaFINAL_eninglés</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Ubicacion_Word">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\bidas\Dropbox\Curso RPA EOI Gestamp\RPA\07_Proyectos\Proyecto Gestamp Calidad\PlantillaWord.docx</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="Planta" />
       <Variable x:TypeArguments="x:String" Name="Responsable_de_empresa_subcontratada" />
       <Variable x:TypeArguments="x:String" Name="Empresa_Subcontratada" />
@@ -153,7 +161,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,15031" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="512,15031" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -169,7 +177,7 @@
             <ui:ExcelSelectRange DisplayName="Seleccionar rango" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_1" Range="B38" SheetName="Sheet1" />
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Enviar tecla de acceso rápido 'B38'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_15" Key="c" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="364c69c9-4b2d-46b9-b206-3d3a97b0b5fc" InformativeScreenshot="eb03316810b627718302e4cc359f4b16" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalida_3Hojas - Excel' /&gt;&lt;wnd cls='EXCEL7' title='PlantillaSalida_3Hojas' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="364c69c9-4b2d-46b9-b206-3d3a97b0b5fc" InformativeScreenshot="eb03316810b627718302e4cc359f4b16" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='PlantillaSalidaFINAL_eninglés - Excel (Error de activación de pr*' /&gt;&lt;uia cls='EXCEL7' name='PlantillaSalidaFINAL_eninglés' /&gt;&lt;uia name='Cuadrícula' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -853,7 +861,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="510,23874" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="512,23874" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
@@ -878,7 +886,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="c788266910c755921de64aa6aa52e916" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3bccb77-c5fe-48b4-a081-1f25595ed0fc" InformativeScreenshot="c788266910c755921de64aa6aa52e916" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='PlantillaWord - Word (Error de activación de productos)' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -890,7 +898,7 @@
             </ui:Click>
             <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" DisplayName="Escribir en 'elemento del'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[Fecha_Inicio.Trim]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09d2bf70-5f7d-4096-a849-28d85ce6483b" InformativeScreenshot="c788266910c755921de64aa6aa52e916" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09d2bf70-5f7d-4096-a849-28d85ce6483b" InformativeScreenshot="c788266910c755921de64aa6aa52e916" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='PlantillaWord - Word (Error de activación de productos)' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -915,7 +923,7 @@
             </ui:SendHotkey>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en 'elemento  Celda de tabla'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[Fecha_Final.Trim]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="d4935989e04ad23c864cec0c66b1a6e5" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="d4935989e04ad23c864cec0c66b1a6e5" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='PlantillaWord - Word (Error de activación de productos)' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='2' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -940,7 +948,7 @@
             </ui:SendHotkey>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en 'elemento  Celda de tabla'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[Planta.Trim]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="49b279ea203c2451c7ac08988fb95b0b" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='4' tableRow='1' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="49b279ea203c2451c7ac08988fb95b0b" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='PlantillaWord - Word (Error de activación de productos)' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='4' tableRow='1' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -987,7 +995,7 @@
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en 'elemento  Celda de tabla'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[Empresa_Subcontratada.Trim]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="c749fb67e018c80369ef7a19c218476f" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='Plantilla - Word' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='3' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0faacb4e-b5ab-40db-a718-09d08a526967" InformativeScreenshot="c749fb67e018c80369ef7a19c218476f" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='PlantillaWord - Word (Error de activación de productos)' /&gt;&lt;uia name='Tabla' role='tabla' /&gt;&lt;uia name='Celda de tabla' role='elemento' tableCol='0' tableRow='3' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -1637,7 +1645,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_32" Text="// Total F&#xA;" />
-            <ui:InterruptibleWhile Condition="[ov&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_14">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_14">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1667,6 +1675,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ov&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_21" Text="[F.Trim]">
               <ui:TypeInto.Target>
@@ -1681,7 +1692,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_33" Text="// Total P&#xA;" />
-            <ui:InterruptibleWhile Condition="[pv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_15">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_15">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1711,6 +1722,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="pv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_22" Text="[P.Trim]">
               <ui:TypeInto.Target>
@@ -1725,7 +1739,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_34" Text="// Total G&#xA;" />
-            <ui:InterruptibleWhile Condition="[qv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_16">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_16">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1755,6 +1769,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="qv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_3" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_23" Text="[G.Trim]">
               <ui:TypeInto.Target>
@@ -1769,7 +1786,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_35" Text="// Total Q&#xA;" />
-            <ui:InterruptibleWhile Condition="[rv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_17">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_17">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1799,6 +1816,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="rv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_4" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[Q.Trim]">
               <ui:TypeInto.Target>
@@ -1813,7 +1833,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_36" Text="// Total H&#xA;" />
-            <ui:InterruptibleWhile Condition="[sv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_18">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_18">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1843,6 +1863,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="sv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_5" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_25" Text="[H.Trim]">
               <ui:TypeInto.Target>
@@ -1857,7 +1880,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_37" Text="// Total R&#xA;" />
-            <ui:InterruptibleWhile Condition="[tv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_19">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_19">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1887,6 +1910,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="tv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_6" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_26" Text="[R.Trim]">
               <ui:TypeInto.Target>
@@ -1901,7 +1927,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_38" Text="// Total I&#xA;" />
-            <ui:InterruptibleWhile Condition="[uv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_20">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_20">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_23">
                   <sap:WorkflowViewStateService.ViewState>
@@ -1931,6 +1957,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="uv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_7" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_27" Text="[I.Trim]">
               <ui:TypeInto.Target>
@@ -1945,7 +1974,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_39" Text="// Total S&#xA;" />
-            <ui:InterruptibleWhile Condition="[vv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_21">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_21">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_24">
                   <Sequence.Variables>
@@ -1978,6 +2007,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="vv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_8" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_28" Text="[S.Trim]">
               <ui:TypeInto.Target>
@@ -1992,7 +2024,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_40" Text="// Total J&#xA;" />
-            <ui:InterruptibleWhile Condition="[wv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_22">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_22">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_25">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2022,6 +2054,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="wv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_9" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_29" Text="[J.Trim]">
               <ui:TypeInto.Target>
@@ -2036,7 +2071,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_41" Text="// Total T&#xA;" />
-            <ui:InterruptibleWhile Condition="[xv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_23">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_23">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_26">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2066,6 +2101,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="xv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_10" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_30" Text="[T.Trim]">
               <ui:TypeInto.Target>
@@ -2080,7 +2118,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_42" Text="// Zusammen&#xA;" />
-            <ui:InterruptibleWhile Condition="[yv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_24">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_24">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_27">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2110,6 +2148,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="yv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_11" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_31" Text="[Zusammen.Trim]">
               <ui:TypeInto.Target>
@@ -2149,7 +2190,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_44" Text="// B.I.O&#xA;" />
-            <ui:InterruptibleWhile Condition="[zv&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_25">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_25">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2179,6 +2220,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="zv&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_12" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_33" Text="[B_I_O.Trim]">
               <ui:TypeInto.Target>
@@ -2218,7 +2262,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_46" Text="// N.I.O&#xA;" />
-            <ui:InterruptibleWhile Condition="[aav&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_26">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_26">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_29">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2248,6 +2292,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="aav&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_13" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="[N_I_O.Trim]">
               <ui:TypeInto.Target>
@@ -2287,7 +2334,7 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment DisplayName="Comentario" sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_48" Text="// Geleistete Stunden&#xA;" />
-            <ui:InterruptibleWhile Condition="[bav&lt;3]" DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_27">
+            <ui:InterruptibleWhile DisplayName="Mientras" sap:VirtualizedContainerService.HintSize="434,473" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_27">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="376,308" sap2010:WorkflowViewState.IdRef="Sequence_30">
                   <sap:WorkflowViewStateService.ViewState>
@@ -2317,6 +2364,9 @@
                   </Assign>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="bav&lt;3" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_14" />
+              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Escribir en" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="TypeInto_37" Text="[Geleistete_Stunden.Trim]">
               <ui:TypeInto.Target>
@@ -2334,24 +2384,35 @@
         </ActivityAction>
       </p:WordApplicationScope.Body>
     </p:WordApplicationScope>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_31">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelSelectRange DisplayName="Seleccionar rango" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_37" Range="Gráfico 1" SheetName="Sheet1" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="510,755" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
+    <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="512,470" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="476,392" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="434,300" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelSelectRange DisplayName="Seleccionar rango" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelSelectRange_37" Range="Gráfico 1" SheetName="Sheet1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Ámbito de aplicación de Excel" sap:VirtualizedContainerService.HintSize="512,755" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[Ubicacion_Excel]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -2425,7 +2486,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="510,2486" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
+    <p:WordApplicationScope DisplayName="Ámbito de aplicación de Word" FilePath="[Ubicacion_Word]" sap:VirtualizedContainerService.HintSize="512,2486" sap2010:WorkflowViewState.IdRef="WordApplicationScope_3">
       <p:WordApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WordDocument">
           <ActivityAction.Argument>
